@@ -6,8 +6,6 @@ require 'shoulda-matchers'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
-
 RSpec.configure do |config|
 
   config.include Capybara::DSL
@@ -24,7 +22,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each, :js => true) do
-    DatabaseClenaer.strategy = :truncation
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do

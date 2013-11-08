@@ -3,9 +3,13 @@ development:
   encoding: unicode
   database: essence_development
   pool: 5
+  username:
+  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: essence_test
   pool: 5
+  username:
+  password:
