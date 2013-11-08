@@ -1,26 +1,27 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'pg'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'turbolinks'
 
+gem 'pg'
+
+gem 'jquery-rails'
+gem 'sass-rails', '~> 4.0.0'
+
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :development, :test do
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
   gem 'sextant'
 end
 
-group :development, :test do
+group :test do
   gem 'capybara'
-  gem 'debugger'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'database-cleaner'
 end
