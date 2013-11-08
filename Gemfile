@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.15'
 gem 'pg'
 gem 'jquery-rails'
+gem 'clearance'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
