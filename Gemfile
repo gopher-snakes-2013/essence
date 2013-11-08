@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 1.2'
 
 group :development, :test do
+  gem 'better_errors'
   gem 'debugger'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -23,5 +24,5 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database-cleaner'
+  gem 'database_cleaner'
 end
