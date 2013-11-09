@@ -1,0 +1,45 @@
+#clearance {
+    #user_email,
+    #user_password,
+    #session_email,
+    #session_password,
+    #password_email {
+      height: 30px;
+      border: none;
+      box-shadow: inset 0 1px 4px #999;
+      padding-left: 10px;
+      font-size: 18px;
+    }
+    #user_email,
+    #session_email {
+      border-radius: 10px 10px 0px 0px;
+    }
+    #user_password,
+    #session_password {
+      border-radius: 0px 0px 10px 10px;
+    }
+    #password_email{
+      border-radius: 10px;
+    }
+    .submit-field input {
+      margin: 20px 0 0 0;
+      padding: 5px 10px 5px 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #28b362;
+      background: -webkit-linear-gradient(45deg, rgba(40,179,98,1) 0%,rgba(46,204,113,1) 99%);
+      font-size: 1.1em;
+      color: #fff;
+    }
+    p {
+      font-family: sans-serif;
+      color: white;
+    }
+    .other-links a{
+      display: block;
+      margin: 10px auto;
+      text-decoration: none;
+      font-family: sans-serif;
+      color: #fff;
+    }
+  }

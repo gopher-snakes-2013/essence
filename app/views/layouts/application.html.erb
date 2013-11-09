@@ -3,18 +3,26 @@
 <head>
   <title>Essence</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
-
-<header>
-  <div id="essence_logo">Essence
+  <header>
+    <div id="essence_logo">Essence
     <%= link_to "", root_path %>
+    </div>
+
+    <% if signed_in? -%>
+      <%= link_to t('.sign_out'), sign_out_path, :method => :delete %>
+    <% end -%>
+  </header>
+
+  <div id='flash'>
+    <% flash.each do |key, value| -%>
+      <div id='flash_<%= key %>'><%=h value %></div>
+    <% end %>
   </div>
-</header>
 
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>
