@@ -41,7 +41,7 @@ end
 #HELPER METHODS
 module UserHelper
   def sign_in
-    user = FactoryGirl.build(:user)
+    user = FactoryGirl.create(:user)
 
     visit root_path
     fill_in 'email', with: user.email
