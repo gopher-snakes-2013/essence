@@ -48,13 +48,6 @@ module UserHelper
     click_on 'Sign up'
   end
 
-  def create_user
-    user = User.new
-    user.email = "john@doe.com"
-    user.password = "test123"
-    user.save
-  end
-
   def create_user_and_sign_in
     user = User.new
     user.email = "john@doe.com"
