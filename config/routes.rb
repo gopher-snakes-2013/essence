@@ -1,5 +1,5 @@
 Essence::Application.routes.draw do
 
-  root to: "sources#index"
+  root to: "topics#index"
 
 end
