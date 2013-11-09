@@ -19,23 +19,3 @@ feature 'Topics index page', js: true do
   end
 
 end
-
-
-
-  # before(:each) do
-  #   visit root_path
-  #   john = User.new
-  #   john.email = 'john.doe@mail.com'
-  #   john.password = 'abc123'
-  #   john.save
-
-  #   fill_in 'email', with: 'john.doe@mail.com'
-  #   fill_in 'password', with: 'abc123'
-  #   click_on 'Sign in'
-  # end
-
-  # scenario 'After signing in, a user can view a list of their topics' do
-  #   expect(page).to have_content("ruby")
-  #   expect(page).to have_content("ajax")
-  #   expect(page).to have_content("javascript")
-  # end
