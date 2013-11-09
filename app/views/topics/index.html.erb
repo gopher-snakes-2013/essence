@@ -9,3 +9,17 @@
   </div>
 <% end %>
 </div>
+
+<div class="topic-errors">
+  <% if session['errors'] %>
+    <% session['errors'].each do |error| %>
+    <%= error %>
+    <% end %>
+  <%end %>
+</div>
+
+<%= form_for @topic, url: topics_path, method: 'POST' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create Topic" %>
+<% end %>

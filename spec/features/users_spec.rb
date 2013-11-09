@@ -1,7 +1,7 @@
 require 'spec_helper'
 include UserHelper
 
-feature 'Guest can sign up', js: true do
+feature 'Guest signing up', js: true do
   before(:each) do
     visit root_path
   end
