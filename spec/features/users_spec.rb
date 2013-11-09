@@ -17,8 +17,8 @@ feature 'Guest can sign up', js: true do
 
   scenario 'A user can sign up', js: true do
     click_on 'Sign up'
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
+    fill_in 'email', with: 'john@doe.com'
+    fill_in 'password', with: 'test123'
     click_on 'Sign up'
     expect(current_path).to eq root_path
   end
@@ -58,6 +58,7 @@ feature "User signing out" do
   end
 
   scenario 'A user can click the logo to reach return to the home page' do
+    visit root_path
     click_on 'Forgot password?'
     click_on 'Essence'
     expect(current_path).to eq sign_in_path
