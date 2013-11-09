@@ -20,13 +20,13 @@ describe TopicsController do
   context "#create" do
     it "creates a new topic with valid params" do
       expect {
-        post :create, topic: { user_id: 1, name: 'ruby' }
+        post :create, topic: { user_id: user.id, name: 'ruby' }
       }.to change { Topic.count }.by(1)
     end
 
     it "doesn't create a topic with invalid params" do
       expect {
-        post :create, topic: { user_id: 1 }
+        post :create, topic: { user_id: user.id }
       }.to_not change { Topic.count }
     end
   end

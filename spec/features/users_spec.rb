@@ -1,4 +1,5 @@
 require 'spec_helper'
+include UserHelper
 
 feature 'Guest can sign up', js: true do
   before(:each) do
@@ -15,39 +16,56 @@ feature 'Guest can sign up', js: true do
   end
 
   scenario 'A user can sign up', js: true do
+    user = FactoryGirl.build(:user)
+
     click_on 'Sign up'
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
+    fill_in 'email', with: user.email
+    fill_in 'password', with: user.password
     click_on 'Sign up'
     expect(current_path).to eq root_path
   end
 
-  scenario 'A user can sign in', js: true do
-    john = User.new
-    john.email = 'john.doe@mail.com'
-    john.password = 'abc123'
-    john.save
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
+end
+
+feature 'User signing in' do
+
+  let!(:user) { FactoryGirl.create(:user) }
+
+  before(:each) do
+    visit root_path
+  end
+
+  scenario 'with valid params', js: true do
+    fill_in 'email', with: user.email
+    fill_in 'password', with: user.password
     click_on 'Sign in'
     expect(current_path).to eq root_path
   end
+
+  scenario 'with invalid params', js: true do
+    fill_in 'email', with: 'john'
+    fill_in 'password', with: user.password
+    click_on 'Sign in'
+    expect(current_path).to eq sign_in_path
+  end
+
+end
+
+feature "User signing out" do
+
+  let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'A user can log out', js: true do
-    john = User.new
-    john.email = 'john.doe@mail.com'
-    john.password = 'abc123'
-    john.save
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
-    click_on 'Sign in'
+    sign_in
     click_on 'Sign out'
     expect(current_path).to eq sign_in_path
   end
 
   scenario 'A user can click the logo to reach return to the home page' do
+    visit root_path
     click_on 'Forgot password?'
     click_on 'Essence'
     expect(current_path).to eq sign_in_path
   end
+
 end
