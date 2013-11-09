@@ -16,9 +16,11 @@ feature 'Guest can sign up', js: true do
   end
 
   scenario 'A user can sign up', js: true do
+    user = FactoryGirl.build(:user)
+
     click_on 'Sign up'
-    fill_in 'email', with: 'john@doe.com'
-    fill_in 'password', with: 'test123'
+    fill_in 'email', with: user.email
+    fill_in 'password', with: user.password
     click_on 'Sign up'
     expect(current_path).to eq root_path
   end
@@ -34,15 +36,15 @@ feature 'User signing in' do
   end
 
   scenario 'with valid params', js: true do
-    fill_in 'email', with: 'john@doe.com'
-    fill_in 'password', with: 'test123'
+    fill_in 'email', with: user.email
+    fill_in 'password', with: user.password
     click_on 'Sign in'
     expect(current_path).to eq root_path
   end
 
   scenario 'with invalid params', js: true do
     fill_in 'email', with: 'john'
-    fill_in 'password', with: 'test123'
+    fill_in 'password', with: user.password
     click_on 'Sign in'
     expect(current_path).to eq sign_in_path
   end
@@ -50,6 +52,8 @@ feature 'User signing in' do
 end
 
 feature "User signing out" do
+
+  let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'A user can log out', js: true do
     sign_in
