@@ -3,6 +3,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'shoulda-matchers'
+require 'factory_girl_rails'
+require 'clearance/testing'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
