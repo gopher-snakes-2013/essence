@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe TopicsController do
-
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.build(:user)}
 
   before(:each) do
     sign_in_as(user)
@@ -19,17 +18,16 @@ describe TopicsController do
   end
 
   context "#create" do
-    xit "creates a new topic with valid params" do
-
+    it "creates a new topic with valid params" do
+      expect {
+        post :create, topic: { user_id: 1, name: 'ruby' }
+      }.to change { Topic.count }.by(1)
     end
 
-    xit "doesn't create a topic with invalid params" do
-
+    it "doesn't create a topic with invalid params" do
+      expect {
+        post :create, topic: { user_id: 1 }
+      }.to_not change { Topic.count }
     end
-
-    xit "doesn't create repeated topics (topics must be unique)" do
-
-    end
-
   end
 end

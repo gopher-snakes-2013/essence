@@ -6,4 +6,20 @@ class TopicsController < ApplicationController
   def new
   end
 
+
+  #Our actual feature will require a different implementation of topics#create
+  #Params will have symbols instead of strings
+  def create
+    topic = Topic.new
+    topic.user_id = params['topic']['user_id'].to_i
+    topic.name = params['topic']['name']
+
+    if topic.save
+      redirect_to root_path
+    else
+      # errors = topic.errors.full_messages
+      redirect_to new_topic_path
+    end
+  end
+
 end
