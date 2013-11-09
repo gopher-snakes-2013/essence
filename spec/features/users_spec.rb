@@ -44,4 +44,10 @@ feature 'Guest can sign up', js: true do
     click_on 'Sign out'
     expect(current_path).to eq sign_in_path
   end
+
+  scenario 'A user can click the logo to reach return to the home page' do
+    click_on 'Forgot password?'
+    click_on 'Essence'
+    expect(current_path).to eq sign_in_path
+  end
 end
