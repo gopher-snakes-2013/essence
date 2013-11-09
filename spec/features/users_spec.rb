@@ -1,4 +1,5 @@
 require 'spec_helper'
+include UserHelper
 
 feature 'Guest can sign up', js: true do
   before(:each) do
@@ -22,25 +23,36 @@ feature 'Guest can sign up', js: true do
     expect(current_path).to eq root_path
   end
 
-  scenario 'A user can sign in', js: true do
-    john = User.new
-    john.email = 'john.doe@mail.com'
-    john.password = 'abc123'
-    john.save
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
+end
+
+feature 'User signing in' do
+
+  let!(:user) { FactoryGirl.create(:user) }
+
+  before(:each) do
+    visit root_path
+  end
+
+  scenario 'with valid params', js: true do
+    fill_in 'email', with: 'john@doe.com'
+    fill_in 'password', with: 'test123'
     click_on 'Sign in'
     expect(current_path).to eq root_path
   end
 
-  scenario 'A user can log out', js: true do
-    john = User.new
-    john.email = 'john.doe@mail.com'
-    john.password = 'abc123'
-    john.save
-    fill_in 'email', with: 'john.doe@mail.com'
-    fill_in 'password', with: 'abc123'
+  scenario 'with invalid params', js: true do
+    fill_in 'email', with: 'john'
+    fill_in 'password', with: 'test123'
     click_on 'Sign in'
+    expect(current_path).to eq sign_in_path
+  end
+
+end
+
+feature "User signing out" do
+
+  scenario 'A user can log out', js: true do
+    sign_in
     click_on 'Sign out'
     expect(current_path).to eq sign_in_path
   end
@@ -50,4 +62,5 @@ feature 'Guest can sign up', js: true do
     click_on 'Essence'
     expect(current_path).to eq sign_in_path
   end
+
 end

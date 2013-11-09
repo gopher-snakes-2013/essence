@@ -6,7 +6,6 @@ class TopicsController < ApplicationController
   def new
   end
 
-
   #Our actual feature will require a different implementation of topics#create
   #Params will have symbols instead of strings
   def create
@@ -17,7 +16,6 @@ class TopicsController < ApplicationController
     if topic.save
       redirect_to root_path
     else
-      # errors = topic.errors.full_messages
       redirect_to new_topic_path
     end
   end
