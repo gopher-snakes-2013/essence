@@ -36,6 +36,9 @@ a {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  a {
+    color: #384047;
+  }
 }
 
 #essence_logo:hover, #essence_logo:focus, #essence_logo:active {
