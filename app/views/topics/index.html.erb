@@ -1,3 +1,11 @@
 <div>Beauty is the essence of water.</div>
 
 <div>And water is the essence of beauty.</div>
+
+<div class="topic-list">
+<% @topics.all.each do |topic|%>
+  <div class="topic-name">
+    <%= topic.name %>
+  </div>
+<% end %>
+</div>

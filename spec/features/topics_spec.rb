@@ -1,14 +1,13 @@
 require 'spec_helper'
 include UserHelper
 
-feature 'Topics index page', js: true do
+feature 'Topics index page' do
 
-  before(:all) do
-    sign_in
-  end
+  let!(:topic) { FactoryGirl.create(:topic) }
 
   context "after signing in, user can" do
-    xscenario "see a topic workspace" do
+    scenario "see a topic workspace" do
+      sign_in
       expect(page).to have_content("Ruby")
     end
 
