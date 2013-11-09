@@ -4,14 +4,16 @@ describe TopicsController do
 
   let!(:user) { FactoryGirl.create(:user) }
 
-  it "#index" do
+  before(:each) do
     sign_in_as(user)
+  end
+
+  it "#index" do
     get :index
     response.status.should eq(200)
   end
 
   it "#new" do
-    sign_in_as(user)
     get :new
     response.status.should eq(200)
   end
