@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :topic_with_snippet do
-    snippets {|topic| [topic.association(:snippet)] }
+    snippets { |topic| [topic.association(:snippet)] }
   end
 
   factory :snippet do
