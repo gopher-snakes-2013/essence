@@ -3,12 +3,13 @@
 <div>And wetness is the essence of beauty.</div>
 
 <div class="topic-list">
-<% @topics.all.each do |topic|%>
-  <div class="topic-name" id="topic-<%=topic.id%>">
-    <%= link_to topic.name, topic_path(topic)%>
-    <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
-  </div>
-<% end %>
+  <i class="fa fa-plus-square-o"></i>
+  <% @topics.all.each do |topic|%>
+    <div class="topic-name" id="topic-<%=topic.id%>">
+      <%= link_to topic.name, topic_path(topic)%>
+      <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
+    </div>
+  <% end %>
 </div>
 
 <div id='flash'>
