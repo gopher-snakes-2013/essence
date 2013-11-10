@@ -9,11 +9,29 @@ body {
   border: 2px solid;
 }
 
-.topic-name {
+.new-topic-form {
+  width: 30%;
+  padding: 5px;
+  float: right;
+  margin-right: 12%;
+  border: 2px solid;
+}
+
+
+
+.topic-name a{
   float: left;
   border: 1px solid;
-  padding: 5px;
+  padding: 3px;
   margin: 2px;
   font-family: helvetica;
   font-size: 2em;
+}
+
+.topic-name .delete-topic{
+  float: left;
+  border: 1px solid;
+  padding: 1px;
+  font-family: helvetica;
+  font-size: 10px;
 }

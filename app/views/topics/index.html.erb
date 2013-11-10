@@ -4,8 +4,9 @@
 
 <div class="topic-list">
 <% @topics.all.each do |topic|%>
-  <div class="topic-name">
-    <%= topic.name %>
+  <div class="topic-name" id="topic-<%=topic.id%>">
+    <a href="#"><%= topic.name %></a>
+    <%= button_to "Delete", { action: :destroy, id: topic.id }, { method: :delete } %>
   </div>
 <% end %>
 </div>
@@ -16,8 +17,10 @@
   <% end %>
 </div>
 
+<div class="new-topic-form">
 <%= form_for @topic, url: topics_path, method: 'POST' do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit "Create Topic" %>
 <% end %>
+</div>
