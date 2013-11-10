@@ -58,6 +58,10 @@ a {
 
 // nav
 
+.navbar {
+  min-height: 3.5em;
+}
+
 .navbar ul {
   float: right;
 }
@@ -71,7 +75,6 @@ a {
   transition: all 0.5s ease-in-out;
 }
 
-// .navbar-nav li:hover, .navbar-nav li:focus, .navbar-nav li:active {
-//    background-color: rgba(250,250,250,0.2);
-
-// }
+.sign-in {
+  background-color: #edeff0;
+}
