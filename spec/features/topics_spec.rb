@@ -51,5 +51,14 @@ feature 'User creates a topic' do
       expect(page).to have_content("Name has already been taken")
     end
   end
+end
+
+feature 'User deletes a topic' do
+
+  let!(:topic) { FactoryGirl.create(:topic) }
+
+  before(:each) do
+    sign_in
+  end
 
 end

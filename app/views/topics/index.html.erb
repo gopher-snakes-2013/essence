@@ -4,7 +4,7 @@
 
 <div class="topic-list">
 <% @topics.all.each do |topic|%>
-  <div class="topic-name">
+  <div class="topic-name" id="topic-<%=topic.id%>">
     <%= topic.name %>
   </div>
 <% end %>
