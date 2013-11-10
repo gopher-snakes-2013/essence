@@ -42,13 +42,6 @@ end
 #HELPER METHODS
 module UserHelper
 
-  # def sign_up
-  #   click_on 'Sign up'
-  #   fill_in 'email', with: 'test@test.com'
-  #   fill_in 'password', with: 'test123'
-  #   click_on 'Sign up'
-  # end
-
   def create_user_and_sign_in
     user = FactoryGirl.create(:user)
     visit root_path
