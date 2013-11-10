@@ -18,12 +18,6 @@
     <% end -%>
   </header>
 
-  <div id='flash'>
-    <% flash.each do |key, value| -%>
-      <div id='flash_<%= key %>'><%=h value %></div>
-    <% end %>
-  </div>
-
   <%= yield %>
 </body>
 </html>
