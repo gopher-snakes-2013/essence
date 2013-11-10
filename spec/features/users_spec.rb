@@ -56,7 +56,7 @@ feature "User signing out" do
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'A user can log out', js: true do
-    sign_in
+    sign_in_as(user)
     click_on 'Sign out'
     expect(current_path).to eq sign_in_path
   end
