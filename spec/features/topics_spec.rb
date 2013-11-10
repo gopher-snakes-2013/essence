@@ -11,7 +11,7 @@ feature 'Topics index page' do
       sign_in
     end
 
-    scenario "see a default topic" do
+    xscenario "see a default topic" do
       expect(page).to have_content("Unassigned")
     end
 
