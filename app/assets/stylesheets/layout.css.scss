@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 html {
-  background-color: #bdc3c7; /*rgba(250,250,250,0.95);*/
+  background-color: #edeff0; /*#bdc3c7 rgba(250,250,250,0.95);*/
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   font-size: 16px;
@@ -18,27 +18,29 @@ a {
 /* Header */
 
 #essence_logo {
+  position: absolute;
+  left: 1em;
+  top: 0.4em;
   cursor: pointer;
   font-size: 1.3em;
   font-weight: 400;
-  width: 1em;
-  padding: 0.0625em 0.25em;
+  width: 1.8em;
+  padding: 0.05em 0.25em;
   overflow: hidden;
   background: #ecf0f1;
   text-align: center;
-  text-indent: 0.2em;
+  text-indent: 0.15em;
+  text-decoration: none;
   letter-spacing: 0.5em;
   color: #384047;
   border: 0.1875em solid #ecf0f1;
   border-radius: 0.125em;
+  -webkit-font-smoothing:antialiased;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  a {
-    color: #384047;
-  }
 }
 
 #essence_logo:hover, #essence_logo:focus, #essence_logo:active {
@@ -46,6 +48,27 @@ a {
   text-indent: 0px;
   color: #ecf0f1;
   font-weight: 300;
-  width: 5em;
+  width: 5.7em;
   letter-spacing: 0.1875em;
+  -webkit-font-smoothing:antialiased;
 }
+
+// nav
+
+.navbar ul {
+  float: right;
+}
+
+#sign_out:hover, #sign_out:active, #sign_out:focus, {
+  color: #e15258;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+// .navbar-nav li:hover, .navbar-nav li:focus, .navbar-nav li:active {
+//    background-color: rgba(250,250,250,0.2);
+
+// }
