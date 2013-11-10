@@ -9,11 +9,12 @@ FactoryGirl.define do
     user
   end
 
-  factory :topic_with_snippet do
-    snippets { |topic| [topic.association(:snippet)] }
-  end
+  # factory :topic_with_snippet do
+  #   snippets { |topic| [topic.association(:snippet)] }
+  # end
 
   factory :snippet do
-    content 'this is my content'
+    content "it's not easy being green"
+    topic
   end
 end

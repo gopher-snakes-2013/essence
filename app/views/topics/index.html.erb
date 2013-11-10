@@ -5,8 +5,8 @@
 <div class="topic-list">
 <% @topics.all.each do |topic|%>
   <div class="topic-name" id="topic-<%=topic.id%>">
-    <a href="#"><%= topic.name %></a>
-    <%= button_to "Delete", { action: :destroy, id: topic.id }, { method: :delete } %>
+    <%= link_to topic.name, topic_path(topic)%>
+    <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
   </div>
 <% end %>
 </div>
