@@ -1,20 +1,18 @@
+require 'spec_helper'
+
 FactoryGirl.define do
   factory :user do
-    email "john@doe.com"
-    password  "test123"
+    email Faker::Internet.email
+    password  Faker::Internet.password
   end
 
   factory :topic do
-    name 'Kermit'
+    name Faker::Name.name
     user
   end
 
-  # factory :topic_with_snippet do
-  #   snippets { |topic| [topic.association(:snippet)] }
-  # end
-
   factory :snippet do
-    content "it's not easy being green"
+    content Faker::Lorem.sentences
     topic
   end
 end

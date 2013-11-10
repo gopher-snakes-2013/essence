@@ -5,6 +5,7 @@ require 'rspec/autorun'
 
 require 'clearance/testing'
 require 'factory_girl_rails'
+require 'faker'
 require 'shoulda-matchers'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
@@ -41,26 +42,22 @@ end
 #HELPER METHODS
 module UserHelper
 
-  def sign_up
-    click_on 'Sign up'
-    fill_in 'email', with: 'test@test.com'
-    fill_in 'password', with: 'test123'
-    click_on 'Sign up'
-  end
+  # def sign_up
+  #   click_on 'Sign up'
+  #   fill_in 'email', with: 'test@test.com'
+  #   fill_in 'password', with: 'test123'
+  #   click_on 'Sign up'
+  # end
 
   def create_user_and_sign_in
-    user = User.new
-    user.email = "john@doe.com"
-    user.password = "test123"
-    user.save
+    user = FactoryGirl.create(:user)
     visit root_path
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password
     click_on 'Sign in'
   end
 
-  def sign_in
-    user = FactoryGirl.build(:user)
+  def sign_in_as(user)
     visit root_path
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password

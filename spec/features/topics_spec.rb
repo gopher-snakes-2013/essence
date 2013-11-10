@@ -3,12 +3,13 @@ include UserHelper
 
 feature 'Topics index page' do
 
+  let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { FactoryGirl.create(:topic) }
 
   context "after signing in, user can" do
 
     before(:each) do
-      sign_in
+      sign_in_as(user)
     end
 
     xscenario "see a default topic" do
@@ -25,10 +26,11 @@ end
 
 feature 'User creates a topic' do
 
+  let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { FactoryGirl.create(:topic) }
 
   before(:each) do
-    sign_in
+    sign_in_as(user)
   end
 
   context "with valid params" do
@@ -54,26 +56,29 @@ feature 'User creates a topic' do
 end
 
 feature 'User clicks on a topic' do
-  let!(:snippet) { FactoryGirl.create(:snippet) }
+  let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { snippet.topic }
+  let!(:snippet) { FactoryGirl.create(:snippet) }
 
   before(:each) do
-    sign_in
+    sign_in_as(user)
   end
 
-  scenario 'and sees a list of associated snippets' do
+  xscenario 'and sees a list of associated snippets' do
     click_on topic.name
     expect(page).to have_content(topic.snippets.first.content)
+    expect(page).to have_content(topic.snippets.last.content)
   end
 
 end
 
 feature 'User deletes a topic' do
 
+  let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { FactoryGirl.create(:topic) }
 
   before(:each) do
-    sign_in
+    sign_in_as(user)
   end
 
   scenario "can click on a button to delete a topic" do
