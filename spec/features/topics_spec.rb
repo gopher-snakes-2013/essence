@@ -53,6 +53,21 @@ feature 'User creates a topic' do
   end
 end
 
+feature 'User clicks on a topic' do
+  let!(:snippet) { FactoryGirl.create(:snippet) }
+  let!(:topic) { snippet.topic }
+
+  before(:each) do
+    sign_in
+  end
+
+  xscenario 'and sees a list of associated snippets' do
+    click_on topic.name
+    expect(page).to have_content(topic.snippets.first.content)
+  end
+
+end
+
 feature 'User deletes a topic' do
 
   let!(:topic) { FactoryGirl.create(:topic) }
