@@ -7100,6 +7100,7 @@ td.visible-print {
 @media screen and (max-width: 768px) {
   .navbar ul {
     float: left !important;
+    text-align: left;
   }
 }
 

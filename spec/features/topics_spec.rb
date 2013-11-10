@@ -4,6 +4,7 @@ include UserHelper
 feature 'Topics index page' do
 
   let!(:topic) { FactoryGirl.create(:topic) }
+  let!(:user){ FactoryGirl.build(:user) }
 
   context "after signing in, user can" do
 
@@ -18,6 +19,10 @@ feature 'Topics index page' do
     scenario "click on a topic to inspect its snippets" do
       click_on("Ruby")
       expect(current_path).to eq topic_path(topic)
+    end
+
+    scenario "see their username" do
+      expect(page).to have_content(user.email)
     end
   end
 
