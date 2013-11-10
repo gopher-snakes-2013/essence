@@ -1,5 +1,8 @@
 class SnippetsController < ApplicationController
 
+  def index
+  end
+
   def new
   end
 
