@@ -11,8 +11,8 @@ feature 'Topics index page' do
       sign_in
     end
 
-    scenario "see a topic workspace" do
-      expect(page).to have_content("Ruby")
+    xscenario "see a default topic" do
+      expect(page).to have_content("Unassigned")
     end
 
     xscenario "click on a topic to inspect its snippets" do
