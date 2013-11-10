@@ -9,9 +9,11 @@ describe SnippetsController do
     sign_in_as(user)
   end
 
-  it "#new" do
-    get :new
-    response.status.should eq 200
+  context "#new" do
+    it "returns a valid response when a new snippet is instantiated" do
+      get :new
+      response.status.should eq 200
+    end
   end
 
   context "#create" do

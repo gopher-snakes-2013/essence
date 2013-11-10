@@ -15,9 +15,9 @@ feature 'Topics index page' do
       expect(page).to have_content("Unassigned")
     end
 
-    xscenario "click on a topic to inspect its snippets" do
+    scenario "click on a topic to inspect its snippets" do
       click_on("Ruby")
-      expect(current_path).to eq topics_id_path
+      expect(current_path).to eq topic_path(topic)
     end
   end
 
@@ -51,6 +51,21 @@ feature 'User creates a topic' do
       expect(page).to have_content("Name has already been taken")
     end
   end
+end
+
+feature 'User clicks on a topic' do
+  let!(:snippet) { FactoryGirl.create(:snippet) }
+  let!(:topic) { snippet.topic }
+
+  before(:each) do
+    sign_in
+  end
+
+  xscenario 'and sees a list of associated snippets' do
+    click_on topic.name
+    expect(page).to have_content(topic.snippets.first.content)
+  end
+
 end
 
 feature 'User deletes a topic' do
