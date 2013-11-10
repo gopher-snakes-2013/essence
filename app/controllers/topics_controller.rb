@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
     if topic.save
       redirect_to root_path
     else
-      session['errors'] = topic.errors.full_messages
+      flash[:error] = topic.errors.full_messages
       redirect_to root_path
     end
   end

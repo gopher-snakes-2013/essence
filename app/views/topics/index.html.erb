@@ -10,12 +10,10 @@
 <% end %>
 </div>
 
-<div class="topic-errors">
-  <% if session['errors'] %>
-    <% session['errors'].each do |error| %>
-    <%= error %>
-    <% end %>
-  <%end %>
+<div id='flash'>
+  <% flash.each do |key, value| -%>
+    <div id='flash_<%= key %>'><%=h value[0] %></div>
+  <% end %>
 </div>
 
 <%= form_for @topic, url: topics_path, method: 'POST' do |f| %>
