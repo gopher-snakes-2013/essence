@@ -18,9 +18,5 @@
 </div>
 
 <div class="new-topic-form">
-<%= form_for @topic, url: topics_path, method: 'POST' do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create Topic" %>
-<% end %>
+  <%= render 'new_topic_form' %>
 </div>
