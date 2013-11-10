@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe TopicsController do
-  let!(:user) { FactoryGirl.build(:user)}
+  let!(:user) { FactoryGirl.build(:user) }
+  let!(:topic) { FactoryGirl.create(:topic) }
 
   before(:each) do
     sign_in_as(user)
@@ -30,4 +31,13 @@ describe TopicsController do
       }.to_not change { Topic.count }
     end
   end
+
+  context "#delete" do
+    it "deletes a topic" do
+      expect {
+        delete :destroy, id: topic.id
+      }.to change { Topic.count }.by(-1)
+    end
+  end
+
 end

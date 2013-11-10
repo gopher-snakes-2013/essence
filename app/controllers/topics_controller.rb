@@ -5,14 +5,10 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
-  def new
-  end
-
   def create
     topic = Topic.new
     topic.user_id = current_user.id
     topic.name = params[:topic][:name]
-
     if topic.save
       redirect_to root_path
     else
@@ -21,4 +17,9 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to root_path
+  end
 end
