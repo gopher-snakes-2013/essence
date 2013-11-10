@@ -1,37 +1,39 @@
 body {
-  text-align: center
-}
+  text-align: center;
 
-.topic-list {
-  margin: 0 auto;
-  width: 65%;
-  padding: 5%;
-  border: 2px solid;
-}
+  .topic-list {
+    margin: 0 auto;
+    width: 65%;
+    padding: 5%;
+    border: 2px solid;
+  }
 
-.new-topic-form {
-  width: 30%;
-  padding: 5px;
-  float: right;
-  margin-right: 12%;
-  border: 2px solid;
-}
+  .new-topic-form {
+    width: 30%;
+    padding: 5px;
+    float: right;
+    margin-right: 12%;
+    border: 2px solid;
+  }
 
+  .topic-name {
+    border: 1px solid;
+    padding: 3px;
+    margin: 2px;
+    font-family: helvetica;
+    font-size: 2em;
 
+    a {
+      display: inline-block;
+    }
 
-.topic-name a{
-  float: left;
-  border: 1px solid;
-  padding: 3px;
-  margin: 2px;
-  font-family: helvetica;
-  font-size: 2em;
-}
-
-.topic-name .delete-topic{
-  float: left;
-  border: 1px solid;
-  padding: 1px;
-  font-family: helvetica;
-  font-size: 10px;
+    .delete-button{
+      display: inline-block;
+      margin: 6px auto 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #c0392b;
+      font-size: 0.5em;
+    }
+  }
 }
