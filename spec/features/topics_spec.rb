@@ -15,9 +15,9 @@ feature 'Topics index page' do
       expect(page).to have_content("Unassigned")
     end
 
-    xscenario "click on a topic to inspect its snippets" do
+    scenario "click on a topic to inspect its snippets" do
       click_on("Ruby")
-      expect(current_path).to eq topics_id_path
+      expect(current_path).to eq topic_path(topic)
     end
   end
 
