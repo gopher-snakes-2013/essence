@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   factory :topic do
-    name 'Ruby'
+    name 'Kermit'
     user
   end
 
