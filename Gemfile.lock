@@ -174,8 +174,8 @@ DEPENDENCIES
   database_cleaner
   debugger
   factory_girl_rails (~> 4.0)
-  font-awesome-rails
   faker
+  font-awesome-rails
   jquery-rails
   pg
   rails (= 3.2.15)
