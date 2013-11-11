@@ -1,0 +1,4 @@
+<h1><%= @topic.name %></h1>
+<% @topic.snippets.each do |snippet| %>
+<div class='snippet'><%= snippet.content %></div >
+<% end %>
