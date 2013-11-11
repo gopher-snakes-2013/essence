@@ -15,6 +15,7 @@ end
 
 group :development, :test do
   gem 'debugger'
+  gem 'jasmine'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
