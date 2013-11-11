@@ -6,17 +6,12 @@ var textSelection = {
 
   captureTextSelection: function(e){
     e.preventDefault();
-    console.log(textSelection.getTextOfSelectedDivs(textSelection.cloneSelectedDivs()))
+    textSelection.appendToPage(window.getSelection().getRangeAt(0).cloneContents().textContent);
   },
 
-  cloneSelectedDivs: function(){
-    return window.getSelection().getRangeAt(0).cloneContents().children;
-  },
-
-  getTextOfSelectedDivs: function(selectedDivs){
-    return Array.prototype.slice.call(selectedDivs).map(function(div){return div.innerText}).join(' ')
+  appendToPage: function(text){
+    $('.main_content').append(text);
   }
-
 }
 
 $(document).ready(function(){
