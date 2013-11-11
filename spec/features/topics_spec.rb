@@ -76,7 +76,7 @@ feature 'User clicks on a topic' do
     sign_in_as(user)
   end
 
-  xscenario 'and sees a list of associated snippets' do
+  scenario 'and sees a list of associated snippets', js: true do
     click_on topic.name
     expect(page).to have_content(topic.snippets.first.content)
     expect(page).to have_content(topic.snippets.last.content)

@@ -1,0 +1,14 @@
+.snippet {
+  margin: 0.5em auto;
+  padding: 0.5em;
+  border: 0.1em solid #999;
+  max-width: 25em;
+  font-size: 1.2em;
+  &:hover {
+    -webkit-box-shadow: inset 0px 3px 11px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    inset 0px 3px 11px rgba(50, 50, 50, 0.5);
+    box-shadow:         inset 0px 3px 11px rgba(50, 50, 50, 0.5);
+    transition: box-shadow 0.15s, border 0.15s;
+    border: 0.1em solid #efefef;
+  }
+}
