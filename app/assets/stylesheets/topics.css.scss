@@ -9,23 +9,15 @@ body {
     border: 2px solid;
   }
 
-  .fa-plus-square-o {
+  #add-new-topic {
     position: absolute;
     top: 0.3em;
     right: 0.4em;
-    font-size: 2em;
   }
-
-  .fa-plus-square-o:hover, .fa-plus-square-o:focus, .fa-plus-square-o:active, {
-    color: #999999;
-    -webkit-font-smoothing:antialiased;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-
+  .fa-plus-square-o {
+    font-size: 1.3em;
+    color: #384047;
+}
 
   .new-topic-form {
     width: 30%;
@@ -54,5 +46,10 @@ body {
       background-color: #c0392b;
       font-size: 0.5em;
     }
+  }
+
+  .new-topic-form {
+    display: none;
+    width: 100%;
   }
 }
