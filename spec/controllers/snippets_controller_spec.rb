@@ -28,6 +28,7 @@ describe SnippetsController do
     it "deletes a snippet" do
       new_snip = User.find(topic.user_id).topics.first.snippets.first
       expect {
+        @request.env['HTTP_REFERER'] = "http://localhost:3000/topics/#{topic.id}"
         delete :destroy, id: new_snip.id
       }.to change { Snippet.count }.by(-1)
     end
