@@ -3,5 +3,6 @@ class SourcesController < ApplicationController
   end
 
   def show
+    @snippet = Snippet.new
   end
 end

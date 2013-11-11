@@ -4,4 +4,9 @@
 
   <%= button_to "Add Snippet", new_snippet_path, class: "add-snippet" %>
 
+  <%= form_for @snippet, url: snippets_path, method: 'POST' do |f| %>
+    <%= f.label :topic %>
+    <%= f.text_field :topic, value: "hello" %>
+    <%= f.submit "Save" %>
+  <% end %>
 </div>
