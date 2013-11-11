@@ -11,10 +11,11 @@ class TopicsController < ApplicationController
     topic.user_id = current_user.id || params[:topic][:user_id]
     topic.name = params[:topic][:name]
     if topic.save
-      redirect_to root_path
+      render :json => { new_topic: render_to_string(partial: "topic", locals: { topic: topic })}
     else
-      flash[:error] = topic.errors.full_messages
-      redirect_to root_path
+      # flash[:error] = topic.errors.full_messages
+      render :json => { errors: topic.errors.full_messages }
+      # redirect_to root_path
     end
   end
 

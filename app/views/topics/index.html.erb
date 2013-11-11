@@ -7,10 +7,7 @@
   <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 
   <% @topics.all.each do |topic|%>
-  <div class="topic-name" id="topic-<%=topic.id%>">
-    <%= link_to topic.name, topic_path(topic)%>
-    <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
-  </div>
+    <%= render 'topic', topic: topic %>
   <% end %>
 
 
@@ -19,8 +16,6 @@
     <% if @unaffiliated.length > 0 %>
       <h1>Unclassified snippets:</h1>
     <% end %>
-
-
 
     <% @unaffiliated.each do |snippet| %>
       <div class='snippet'>
