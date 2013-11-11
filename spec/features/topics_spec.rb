@@ -5,7 +5,6 @@ feature 'Topics index page' do
 
   let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { FactoryGirl.create(:topic) }
-  let!(:user){ FactoryGirl.build(:user) }
 
   context "after signing in, user can" do
 
