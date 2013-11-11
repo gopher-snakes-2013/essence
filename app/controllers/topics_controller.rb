@@ -24,11 +24,9 @@ class TopicsController < ApplicationController
   def destroy
     topic = Topic.find(params[:id])
     snips = Snippet.where(topic_id: topic.id)
-    # snips.each do |snippet|
-    #   snippet.topic_id = 0
-    #   snippet.save
-    #   p snippet
-    # end
+    snips.each do |snippet|
+      snippet.update_attribute('topic_id', 0)
+    end
     topic.destroy
     redirect_to root_path
   end
