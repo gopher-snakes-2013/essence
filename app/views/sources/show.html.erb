@@ -6,7 +6,7 @@
 
   <%= form_for @snippet, url: snippets_path, method: 'POST' do |f| %>
     <%= f.label :topic %>
-    <%= f.text_field :topic, value: "hello" %>
+    <%= f.collection_select(:topic_id, @topics, :id, :name, :prompt => "Select a topic") %>
     <%= f.submit "Save" %>
   <% end %>
 </div>

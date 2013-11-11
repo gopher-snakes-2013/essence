@@ -4,5 +4,6 @@ class SourcesController < ApplicationController
 
   def show
     @snippet = Snippet.new
+    @topics = current_user.topics
   end
 end
