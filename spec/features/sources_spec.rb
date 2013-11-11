@@ -26,7 +26,7 @@ feature 'sources library' do
     it "should display the hard-coded test page's content" do
       click_on('Library')
       click_on('test doc')
-      page.should have_content('What do you call a teacher')
+      page.should have_content("that identifies frequently executed loop traces at run-time and then")
     end
   end
 end

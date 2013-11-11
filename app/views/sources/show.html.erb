@@ -2,4 +2,11 @@
 
   <%= render 'test_doc' %>
 
+  <%= button_to "Add Snippet", new_snippet_path, class: "add-snippet" %>
+
+  <%= form_for @snippet, url: snippets_path, method: 'POST' do |f| %>
+    <%= f.label :topic %>
+    <%= f.collection_select(:topic_id, @topics, :id, :name, :prompt => "Select a topic") %>
+    <%= f.submit "Save" %>
+  <% end %>
 </div>
