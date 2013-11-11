@@ -1,3 +1,11 @@
+String.prototype.removeDashWithLineBreak = function() {
+  return this.replace(/-\r?\n|/g,"");
+}
+
+String.prototype.replaceLineBreakWithSpace = function() {
+  return this.replace(/\r?\n/g," ");
+}
+
 var textSelection = {
 
   init: function(){
@@ -14,7 +22,10 @@ var textSelection = {
 
   toggleNewSnippetForm: function(e){
     e.preventDefault();
-    var snippet = textSelection.captureTextSelection().replace(/-\r?\n|\r?\n/g,"");
+    var snippet = textSelection.captureTextSelection();
+    snippet = snippet.removeDashWithLineBreak();
+    snippet = snippet.replaceLineBreakWithSpace();
+
     if(snippet.length > 0){
       $('#new_snippet').fadeToggle();
     } else{
