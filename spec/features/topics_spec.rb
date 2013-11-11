@@ -12,10 +12,6 @@ feature 'Topics index page' do
       sign_in_as(user)
     end
 
-    xscenario "see a default topic" do
-      expect(page).to have_content("Unassigned")
-    end
-
     scenario "click on a topic to inspect its snippets" do
       click_on(topic.name)
       expect(current_path).to eq topic_path(topic)

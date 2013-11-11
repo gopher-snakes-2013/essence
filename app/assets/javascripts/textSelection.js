@@ -20,6 +20,7 @@ var textSelection = {
     } else{
       console.log("Select some text!")
     }
+    $('#snippet_content').val(snippet)
   }
 
 }
