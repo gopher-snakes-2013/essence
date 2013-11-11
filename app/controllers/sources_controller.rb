@@ -4,6 +4,6 @@ class SourcesController < ApplicationController
 
   def show
     @snippet = Snippet.new
-    @topics = current_user.topics
+    @sorted_topics = current_user.topics.sort_by { |topic| topic.name }
   end
 end
