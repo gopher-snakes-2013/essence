@@ -10,3 +10,12 @@ feature 'Snippets' do
     click_on(user.topics.first.name)
     page.has_selector?(:link_or_button, "Delete")
   end
+
+  scenario 'When a user deletes a snippet, the page just refreshes', js: true do
+    sign_in_as(user)
+    click_on(user.topics.first.name)
+    topic_path = current_path
+    click_on 'Delete'
+    current_path.should eq(topic_path)
+  end
+end

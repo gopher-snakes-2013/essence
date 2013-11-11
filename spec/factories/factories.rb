@@ -13,7 +13,7 @@ FactoryGirl.define do
 
     factory :topic_with_snippets do
       after(:create) do |topic|
-        FactoryGirl.create_list(:snippet, 3, topic: topic)
+        FactoryGirl.create_list(:snippet, 1, topic: topic)
       end
     end
   end

@@ -17,7 +17,7 @@ class SnippetsController < ApplicationController
   def destroy
     @snippet = Snippet.find(params[:id])
     @snippet.destroy
-    redirect_to root_path
+    redirect_to :back
   end
 
 end
