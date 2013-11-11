@@ -2,11 +2,22 @@ body {
   text-align: center;
 
   .topic-list {
+    position: relative;
     margin: 0 auto;
     width: 65%;
     padding: 5%;
     border: 2px solid;
   }
+
+  #add-new-topic {
+    position: absolute;
+    top: 0.3em;
+    right: 0.4em;
+  }
+  .fa-plus-square-o {
+    font-size: 1.3em;
+    color: #384047;
+}
 
   .new-topic-form {
     width: 30%;
@@ -35,5 +46,10 @@ body {
       background-color: #c0392b;
       font-size: 0.5em;
     }
+  }
+
+  .new-topic-form {
+    display: none;
+    width: 100%;
   }
 }

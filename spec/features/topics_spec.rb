@@ -5,6 +5,7 @@ feature 'Topics index page' do
 
   let(:user) { FactoryGirl.build(:user) }
   let!(:topic) { FactoryGirl.create(:topic) }
+  let!(:user){ FactoryGirl.build(:user) }
 
   context "after signing in, user can" do
 
@@ -20,6 +21,10 @@ feature 'Topics index page' do
       click_on(topic.name)
       expect(current_path).to eq topic_path(topic)
     end
+
+    scenario "see their username" do
+      expect(page).to have_content(user.email)
+    end
   end
 
 end
@@ -33,21 +38,29 @@ feature 'User creates a topic' do
     sign_in_as(user)
   end
 
-  context "with valid params" do
+  scenario "can click on the plus icon to view new topic form", js: true do
+    click_on("Add new")
+    expect(page).to have_content("Name")
+  end
+
+  context "with valid params", js: true do
     scenario "is successful" do
+      click_on("Add new")
       fill_in 'topic_name', with: "Node.js"
       click_on 'Create Topic'
       expect(page).to have_content("Node.js")
     end
   end
 
-  context "with invalid params" do
+  context "with invalid params", js: true do
     scenario "with no name" do
+      click_on("Add new")
       click_on 'Create Topic'
       expect(page).to have_content("Name can't be blank")
     end
 
     scenario "with repeated name" do
+      click_on("Add new")
       fill_in 'topic_name', with: topic.name
       click_on 'Create Topic'
       expect(page).to have_content("Name has already been taken")

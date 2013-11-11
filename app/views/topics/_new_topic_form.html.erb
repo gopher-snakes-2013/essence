@@ -1,0 +1,5 @@
+  <%= form_for @topic, url: topics_path, method: 'POST' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create Topic" %>
+  <% end %>
