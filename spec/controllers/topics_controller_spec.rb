@@ -21,7 +21,7 @@ describe TopicsController do
   context "#create" do
     it "creates a new topic with valid params" do
       expect {
-        post :create, topic: { user_id: user.id, name: 'ruby' }
+        post :create, topic: { user_id: topic.user_id, name: 'pascal' }
       }.to change { Topic.count }.by(1)
     end
 

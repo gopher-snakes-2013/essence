@@ -4,6 +4,6 @@ Essence::Application.routes.draw do
 
   resources :sources, only: [:index, :show]
   resources :topics, only: [:index, :new, :create, :show, :destroy]
-  resources :snippets, only: [:new, :create]
+  resources :snippets, only: [:new, :create, :destroy]
 
 end
