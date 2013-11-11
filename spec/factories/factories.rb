@@ -30,10 +30,8 @@ FactoryGirl.define do
 
     factory :user_with_topics_with_snippets do
       after(:create) do |user|
-        FactoryGirl.create_list(:topic_with_snippets, 3, user: user)
+        FactoryGirl.create_list(:topic_with_snippets, 1, user: user)
       end
     end
-
   end
-
 end
