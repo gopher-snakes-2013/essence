@@ -1,12 +1,9 @@
-<div id='clearance' class='sign-up'>
-  <h2>Sign up</h2>
+<div class='sign-up'>
+  <h1 class="sign-up-title">Sign up</h1>
 
   <%= form_for @user do |form| %>
     <%= render :partial => '/users/form', :object => form %>
-
-    <div class='submit-field'>
-      <%= form.submit %>
-    </div>
-
   <% end %>
+
+  <%= link_to "Sign in", sign_in_path, class: "sign_in_link" %>
 </div>
