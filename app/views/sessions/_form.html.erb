@@ -1,18 +1,8 @@
 <%= form_for :session, :url => session_path do |form| %>
-  <div class='text-field'>
-    <%= form.text_field :email, :type => 'email', placeholder: 'email' %>
-  </div>
-
-  <div class='password-field'>
-    <%= form.password_field :password, placeholder: 'password' %>
-  </div>
-
-  <div class='submit-field'>
+    <%= form.text_field :email, :type => 'email', placeholder: 'email', class: "sign-up-input" %>
+    <%= form.password_field :password, placeholder: 'password', class: "sign-up-input" %>
     <%= form.submit %>
-  </div>
 
-  <div class='other-links'>
-    <%= link_to t('.sign_up'), sign_up_path %>
-    <%= link_to t('.forgot_password'), new_password_path %>
-  </div>
+    <%= link_to t('.sign_up'), sign_up_path, class: "sign_in_link"  %>
+    <%= link_to t('.forgot_password'), new_password_path, class: "sign_in_link"  %>
 <% end %>

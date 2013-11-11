@@ -1,7 +1,5 @@
-<div class='text-field'>
-  <%= form.text_field :email, :type => 'email', placeholder: 'email' %>
-</div>
+  <%= form.text_field :email, :type => 'email', placeholder: 'email', class: "sign-up-input" %>
 
-<div class='password-field'>
-  <%= form.password_field :password, placeholder: 'password' %>
-</div>
+  <%= form.password_field :password, placeholder: 'password', class: "sign-up-input" %>
+
+  <%= form.submit %>

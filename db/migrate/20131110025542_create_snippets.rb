@@ -3,6 +3,7 @@ class CreateSnippets < ActiveRecord::Migration
     create_table :snippets do |t|
       t.text :content
       t.belongs_to :topic
+      t.belongs_to :user
       t.timestamps
     end
   end

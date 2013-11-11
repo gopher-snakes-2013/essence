@@ -7,15 +7,33 @@
   <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 
   <% @topics.all.each do |topic|%>
-    <div class="topic-name" id="topic-<%=topic.id%>">
-      <%= link_to topic.name, topic_path(topic)%>
-      <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
-    </div>
+  <div class="topic-name" id="topic-<%=topic.id%>">
+    <%= link_to topic.name, topic_path(topic)%>
+    <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
+  </div>
   <% end %>
+
+
+  <div class="unaffiliated">
+
+    <% if @unaffiliated.length > 0 %>
+      <h1>Unclassified snippets:</h1>
+    <% end %>
+
+
+
+    <% @unaffiliated.each do |snippet| %>
+      <div class='snippet'>
+        <%= snippet.content %>
+        <%= button_to 'Delete', snippet_path(snippet), {:class => 'delete-button', method: 'delete'} %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 
 <div id='flash'>
   <% flash.each do |key, value| -%>
-    <div id='flash_<%= key %>'><%=h value[0] %></div>
+  <div id='flash_<%= key %>'><%=h value[0] %></div>
   <% end %>
 </div>
