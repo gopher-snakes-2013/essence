@@ -19,7 +19,7 @@ describe SnippetsController do
   context "#create" do
     it "creates a new snippet with valid params" do
       expect {
-        post :create, snippet: { topic_id: topic.id, content: 'this is content' }
+        post :create, snippet: { user_id: topic.user_id, topic_id: topic.id, content: 'this is content' }
       }.to change { Snippet.count }.by(1)
     end
   end

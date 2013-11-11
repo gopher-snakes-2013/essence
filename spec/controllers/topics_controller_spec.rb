@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe TopicsController do
   let!(:user) { FactoryGirl.build(:user) }
-  let!(:topic) { FactoryGirl.create(:topic) }
+  let!(:topic) { FactoryGirl.create(:topic_with_snippets ) }
 
   before(:each) do
     sign_in_as(user)
@@ -37,6 +37,18 @@ describe TopicsController do
       expect {
         delete :destroy, id: topic.id
       }.to change { Topic.count }.by(-1)
+    end
+
+    it "should not delete any snippets" do
+      expect {
+        delete :destroy, id: topic.id
+      }.not_to change { Snippet.count }
+    end
+
+    it "should change its snippets' topic_id to 0" do
+      snippet = topic.snippets.first
+      delete :destroy, id: topic.id
+      expect(Snippet.find(snippet.id).topic_id).to eq(0)
     end
   end
 

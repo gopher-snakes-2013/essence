@@ -10,6 +10,7 @@ class SnippetsController < ApplicationController
     @snippet = Snippet.new
     @snippet.content = params[:snippet][:content]
     @snippet.topic_id = params[:snippet][:topic_id]
+    @snippet.user_id = current_user.id || params[:snippet][:user_id]
     @snippet.save
     redirect_to root_path
   end

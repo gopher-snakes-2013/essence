@@ -1,5 +1,6 @@
 class Snippet < ActiveRecord::Base
   belongs_to :topic
-  validates_presence_of :content, :topic_id
+  belongs_to :user
+  validates_presence_of :content, :user_id
   validates :content, length: {maximum: 255}
 end

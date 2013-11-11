@@ -4,7 +4,6 @@ FactoryGirl.define do
 
   factory :snippet do
     content Faker::Lorem.sentences
-    topic
   end
 
   factory :topic do
@@ -13,7 +12,7 @@ FactoryGirl.define do
 
     factory :topic_with_snippets do
       after(:create) do |topic|
-        FactoryGirl.create_list(:snippet, 1, topic: topic)
+        FactoryGirl.create_list(:snippet, 1, topic: topic, user: topic.user)
       end
     end
   end
