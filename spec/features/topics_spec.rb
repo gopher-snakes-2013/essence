@@ -26,7 +26,7 @@ end
 
 feature 'User creates a topic' do
 
-  let(:user) { FactoryGirl.build(:user) }
+  let(:user) { FactoryGirl.build(:user_with_topic) }
   let!(:topic) { FactoryGirl.create(:topic) }
 
   before(:each) do
@@ -57,8 +57,7 @@ end
 
 feature 'User clicks on a topic' do
   let(:user) { FactoryGirl.build(:user) }
-  let!(:topic) { snippet.topic }
-  let!(:snippet) { FactoryGirl.create(:snippet) }
+  let!(:topic) { FactoryGirl.create(:topic_with_snippets) }
 
   before(:each) do
     sign_in_as(user)
