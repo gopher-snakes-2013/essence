@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
 
   def create
     topic = Topic.new
-    topic.user_id = current_user.id
+    topic.user_id = current_user.id || params[:topic][:user_id]
     topic.name = params[:topic][:name]
     if topic.save
       redirect_to root_path
