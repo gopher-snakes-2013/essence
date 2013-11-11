@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = current_user.topics
+    @unaffiliated = current_user.snippets.where(topic_id: 0)
     @topic = Topic.new
   end
 
