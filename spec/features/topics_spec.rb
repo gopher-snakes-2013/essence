@@ -48,13 +48,13 @@ feature 'User creates a topic' do
   end
 
   context "with invalid params", js: true do
-    xscenario "with no name" do
+    scenario "with no name" do
       click_on("Add new")
       click_on 'Create Topic'
       expect(page).to have_content("Name can't be blank")
     end
 
-    xscenario "with repeated name" do
+    scenario "with repeated name" do
       click_on("Add new")
       fill_in 'topic_name', with: topic.name
       click_on 'Create Topic'
