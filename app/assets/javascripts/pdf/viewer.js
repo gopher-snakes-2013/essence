@@ -22,7 +22,7 @@
 
 'use strict';
 
-var DEFAULT_URL = 'tracemonkey.pdf';
+var DEFAULT_URL = '';
 var DEFAULT_SCALE = 'auto';
 var DEFAULT_SCALE_DELTA = 1.1;
 var UNKNOWN_SCALE = 0;

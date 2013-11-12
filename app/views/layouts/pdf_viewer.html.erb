@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="ltr" mozdisallowselectionprint moznomarginboxes>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <title>Essence</title>
+    <%= stylesheet_link_tag    "pdf/pdf_viewer", :media => "all" %>
+    <%= javascript_include_tag 'pdf/pdf_viewer' %>
+    <%= csrf_meta_tag %>
+  </head>
+
+  <body tabindex="1">
+    <%= render 'layouts/navigation' %>
+    <div id="outerContainer" class="loadingInProgress">
+      <%= render 'layouts/pdf_viewer/sidebar' %>
+      <div id="mainContainer">
+        <%= render 'layouts/pdf_viewer/find_bar' %>
+        <%= render 'layouts/pdf_viewer/secondary_toolbar' %>
+        <%= render 'layouts/pdf_viewer/toolbar' %>
+        <%= render 'layouts/pdf_viewer/menu' %>
+        <%= render 'layouts/pdf_viewer/error_wraper' %>
+        <%= yield %>
+      </div>
+      <%= render 'layouts/pdf_viewer/overlay_container' %>
+    </div>
+    <%= render 'layouts/pdf_viewer/print' %>
+  </body>
+</html>
+
