@@ -9,7 +9,14 @@ var TopicHandler = {
   },
 
   toggleNewTopicForm: function(){
-    $(".new-topic-form").fadeToggle();
+    var $form = $(".new-topic-form")
+    if($form.hasClass('hidden')){
+      $form.fadeIn(500);
+      $form.removeClass('hidden')
+    } else {
+      $form.fadeOut(500);
+      $form.addClass('hidden')
+    }
     $(".new-topic-form").find("input[type=text], textarea").val("");
   },
 
