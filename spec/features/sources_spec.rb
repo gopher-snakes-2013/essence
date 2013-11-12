@@ -22,11 +22,5 @@ feature 'sources library' do
       click_on('test doc')
       expect(current_path).to eq('/sources/1')
     end
-
-    it "should display the hard-coded test page's content" do
-      click_on('Library')
-      click_on('test doc')
-      page.should have_content("that identifies frequently executed loop traces at run-time and then")
-    end
   end
 end
