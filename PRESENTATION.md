@@ -18,8 +18,22 @@
 * Topic controllers w/ tests added
 
 ##Stardate 11.9.2013
-* pdf.js is working
+* pdf.js is (not) working
 * discussion about pdf.js
 * implemented topics
 * first real day of git workflow
 * added sources library (maybe rollback)
+* Started using gifs with pull requests
+
+##Stardate 11.10.2013
+* Struggled (again) with pdf.js
+* Made lots of progress getting core functionality of application
+* Worked with factory girl to streamline testing/TDD
+* Added direct association between users and snippets that caused some schema issues
+* minor scare at the end of the day with a corrupt master because of schema issue
+
+##Stardate 11.11.2013
+* Slower feature progress
+* Refactored javascript while adding AJAX to make more readable
+* Midproject Moby Dick realization
+* First real help with pdf.js with Shadi
