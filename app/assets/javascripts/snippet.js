@@ -35,7 +35,6 @@ var SnippetHandler = {
   }
 }
 
-
 $(document).ready(function(){
   $(".add-snippet").on('click', SnippetHandler.init)
   $(".new_snippet").on('ajax:complete', function(){
