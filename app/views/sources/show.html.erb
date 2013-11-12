@@ -2,12 +2,7 @@
 
   <%= render 'test_doc' %>
 
-  <%= button_to "Add Snippet", new_snippet_path, class: "add-snippet" %>
+  <button class="add-snippet">Add Snippet</button>
 
-  <%= form_for @snippet, url: snippets_path, method: 'POST' do |f| %>
-    <%= f.label :topic %>
-    <%= f.collection_select(:topic_id, @sorted_topics, :id, :name, :prompt => "Select a topic") %>
-    <%= f.hidden_field :content, value: "test" %>
-    <%= f.submit "Save" %>
-  <% end %>
+  <%= render "snippets/new_snippet_form" %>
 </div>

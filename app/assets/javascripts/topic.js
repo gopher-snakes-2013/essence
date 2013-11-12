@@ -44,7 +44,7 @@ var TopicHandler = {
 
 }
 
-$(document).ready(function() {
+$(document).ready(function(){
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
   $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
   TopicHandler.removeTopicOnDelete();
