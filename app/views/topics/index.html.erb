@@ -3,13 +3,13 @@
 <div>And wetness is the essence of beauty.</div>
 
 <div class="topic-list">
+  <div id="new-topic-errors"></div>
   <button id="add-new-topic"><i class="fa fa-plus-square-o" ></i>Add new</button>
   <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 
   <% @topics.all.each do |topic|%>
     <%= render 'topic', topic: topic %>
   <% end %>
-
 
   <div class="unaffiliated">
 

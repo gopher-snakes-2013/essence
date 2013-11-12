@@ -7,15 +7,13 @@ class TopicsController < ApplicationController
   end
 
   def create
-    topic = Topic.new
-    topic.user_id = current_user.id || params[:topic][:user_id]
-    topic.name = params[:topic][:name]
-    if topic.save
-      render :json => { new_topic: render_to_string(partial: "topic", locals: { topic: topic })}
+    new_topic = Topic.new
+    new_topic.user_id = current_user.id || params[:topic][:user_id]
+    new_topic.name = params[:topic][:name]
+    if new_topic.save
+      render :json => { new_topic: render_to_string(partial: "topic", locals: { topic: new_topic })}
     else
-      # flash[:error] = topic.errors.full_messages
-      render :json => { errors: topic.errors.full_messages }
-      # redirect_to root_path
+      render :json => { errors: new_topic.errors.full_messages }
     end
   end
 

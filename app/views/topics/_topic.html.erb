@@ -1,4 +1,4 @@
 <div class="topic-name" id="topic-<%=topic.id%>">
   <%= link_to topic.name, topic_path(topic)%>
-  <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', method: :delete } %>
+  <%= button_to "Delete", { action: :destroy, id: topic.id }, { :class => 'delete-button', remote: true, method: "delete" } %>
 </div>
