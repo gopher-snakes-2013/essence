@@ -37,10 +37,17 @@ var TopicHandler = {
   },
 
   removeTopicOnDelete: function(){
-    $(".topic-list").on('ajax:success', '.button_to', function(e, data){
-      $(this).closest('.topic-name').remove();
-      $(".unaffiliated").append(data);
+    $(".topic-list").on('ajax:success', '.button_to', function(e, snippets){
+      $(this).closest('.topic-name').hide('slow', function(){
+        this.remove();
+      });
+      // $(this).closest('.topic-name').remove();
+      TopicHandler.appendUnaffiliatedSnippets(snippets);
     })
+  },
+
+  appendUnaffiliatedSnippets: function(snippets){
+    $(".unaffiliated").append(snippets)
   }
 
 }
