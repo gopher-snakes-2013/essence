@@ -79,18 +79,22 @@ feature 'User clicks on a topic' do
 
 end
 
-feature 'User deletes a topic' do
+feature 'User deletes a topic', js: true do
 
   let(:user) { FactoryGirl.build(:user) }
-  let!(:topic) { FactoryGirl.create(:topic) }
+  let!(:topic) { FactoryGirl.create(:topic_with_snippets) }
 
   before(:each) do
     sign_in_as(user)
+    click_on "Delete"
   end
 
   scenario "can click on a button to delete a topic" do
-    click_on "Delete"
     expect(page).to_not have_content(topic.name)
+  end
+
+  scenario "can see that topic's snippets after delete" do
+    expect(page).to have_content(User.find(1).snippets.first.content)
   end
 
 end

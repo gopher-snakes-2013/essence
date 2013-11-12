@@ -48,7 +48,7 @@ describe TopicsController do
     it "should change its snippets' topic_id to 0" do
       snippet = topic.snippets.first
       delete :destroy, id: topic.id
-      expect(Snippet.find(snippet.id).topic_id).to eq(0)
+      expect(Snippet.find(snippet.id).topic_id).to be(nil)
     end
   end
 

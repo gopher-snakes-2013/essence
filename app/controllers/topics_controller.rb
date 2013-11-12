@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = current_user.topics
-    @unaffiliated = current_user.snippets.where(topic_id: 0)
+    @unaffiliated = current_user.unaffiliated_snippets
     @topic = Topic.new
   end
 
@@ -23,11 +23,8 @@ class TopicsController < ApplicationController
 
   def destroy
     topic = Topic.find(params[:id])
-    snips = Snippet.where(topic_id: topic.id)
-    snips.each do |snippet|
-      snippet.update_attribute('topic_id', 0)
-    end
+    snippets = topic.snippets
     topic.destroy
-    redirect_to root_path
+    render :text => render_to_string(:partial => 'snippets', :locals => {:snippets => snippets})
   end
 end

@@ -4,7 +4,7 @@ var TopicHandler = {
     if(response.responseJSON.errors){
       TopicHandler.displayErrors(e, response);
     } else {
-      TopicHandler.appendTopic(e, response)
+      TopicHandler.prependTopic(e, response)
     }
   },
 
@@ -29,16 +29,17 @@ var TopicHandler = {
     $("#new-topic-errors").html("");
   },
 
-  appendTopic: function(e, response){
+  prependTopic: function(e, response){
     var $new_topic = $(response.responseJSON.new_topic)
-    $(".topic-list").append($new_topic);
+    $(".topic-list").prepend($new_topic);
     TopicHandler.toggleNewTopicForm();
     TopicHandler.clearErrorsDiv();
   },
 
   removeTopicOnDelete: function(){
-    $(".topic-list").on('ajax:success', '.button_to', function(){
+    $(".topic-list").on('ajax:success', '.button_to', function(e, data){
       $(this).closest('.topic-name').remove();
+      $(".unaffiliated").append(data);
     })
   }
 
