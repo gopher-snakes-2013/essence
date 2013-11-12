@@ -19,7 +19,6 @@ var TopicHandler = {
 
 }
 
-
 $(document).ready(function() {
 
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
