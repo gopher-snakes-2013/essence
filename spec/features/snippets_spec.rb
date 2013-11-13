@@ -5,17 +5,19 @@ feature 'Snippets' do
 
   let!(:user) { FactoryGirl.create(:user_with_topics_with_snippets) }
 
-  scenario 'User can see a delete button for a snippet', js: true do
+  before(:each) do
     sign_in_as(user)
     click_on(user.topics.first.name)
-    page.has_selector?(:link_or_button, "Delete")
   end
 
-  scenario 'When a user deletes a snippet, the page just refreshes', js: true do
-    sign_in_as(user)
-    click_on(user.topics.first.name)
-    topic_path = current_path
-    click_on 'Delete'
-    current_path.should eq(topic_path)
+  context "User deletes a snippet" do
+
+    scenario 'When a user deletes a snippet, there should be no more snippet', js: true do
+      first_snippet = user.topics.first.snippets.first.content
+      page.should have_content(first_snippet)
+      click_on 'Delete'
+      page.should_not have_content(first_snippet)
+    end
+
   end
 end

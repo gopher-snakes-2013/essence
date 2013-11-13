@@ -35,7 +35,7 @@ var SnippetHandler = {
   },
 
   deleteSnippet: function(){
-    $(this).hide(225, function(){});
+    $(this).hide(225, function(){$(this).remove()});
   }
 }
 
