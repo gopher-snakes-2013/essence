@@ -41,7 +41,6 @@ end
 
 #HELPER METHODS
 module UserHelper
-
   def create_user_and_sign_in
     user = FactoryGirl.create(:user)
     visit root_path
@@ -56,5 +55,13 @@ module UserHelper
     fill_in 'password', with: user.password
     click_on 'Sign in'
   end
+end
 
+module SourceHelper
+  def create_sample_source
+    sample_pdf = User.find(1).sources.new
+    sample_pdf.url = "https://www.irs.gov/pub/irs-pdf/f990ez.pdf"
+    sample_pdf.title = "Sample"
+    sample_pdf.save
+  end
 end

@@ -1,6 +1,6 @@
 var SnippetHandler = {
   removeSnippetOnDelete: function(){
-    $(this).hide(225, function(){$(this).remove()});
+    $(this).closest('.snippet').hide(225, function(){$(this).remove()});
   },
 
   removeUnaffiliatedSnippetOnDelete: function(){
@@ -11,6 +11,6 @@ var SnippetHandler = {
 }
 
 $(document).ready(function(){
-  $('.snippets_list').on('click', '.snippet', SnippetHandler.removeSnippetOnDelete)
+  $('.snippets_list').on('click', '.delete-button', SnippetHandler.removeSnippetOnDelete)
   SnippetHandler.removeUnaffiliatedSnippetOnDelete();
 })
