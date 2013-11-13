@@ -28,4 +28,6 @@ user.email = 'jon@jon.jon'
 user.password = 'abc123'
 user.save
 
-add_topics_to_user(1)
+this_user = User.find_by_email('jon@jon.jon')
+
+add_topics_to_user(this_user.id)
