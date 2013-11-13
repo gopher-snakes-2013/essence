@@ -4277,7 +4277,9 @@ $(document).ready(function webViewerLoad(evt) {
   PDFView.initialize();
 
   var params = PDFView.parseQueryString(document.location.search.substring(1));
-  var file = params.file || DEFAULT_URL;
+  var url = $('#viewer').data('url');
+  console.log(url)
+  var file = url || params.file || DEFAULT_URL;
 
 
   var fileInput = document.createElement('input');

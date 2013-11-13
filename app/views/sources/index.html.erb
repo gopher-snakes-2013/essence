@@ -1,1 +1,9 @@
-<%= link_to "test doc", source_path(1) %>
+<div>
+
+</div>
+
+<ul>
+  <% @sources.each do |source| %>
+  <li><%= link_to source.title, source %></li>
+  <% end %>
+</ul>
