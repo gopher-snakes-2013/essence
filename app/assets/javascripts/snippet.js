@@ -32,6 +32,10 @@ var SnippetHandler = {
   showAndFillNewSnippetForm: function(snippet){
     $('#new_snippet').fadeToggle();
     $('#snippet_content').val(snippet)
+  },
+
+  deleteSnippet: function(){
+    $(this).hide(225, function(){});
   }
 }
 
@@ -40,4 +44,5 @@ $(document).ready(function(){
   $(".new_snippet").on('ajax:complete', function(){
     $('#new_snippet').fadeToggle();
   })
+  $('.snippets_list').on('click', '.snippet', SnippetHandler.deleteSnippet)
 })
