@@ -37,7 +37,7 @@ var TopicHandler = {
   },
 
   removeTopicOnDelete: function(){
-    $(".topic-list").on('ajax:success', '.button_to', function(e, snippets){
+    $(".topic-list").on('ajax:success', '.topic-name .button_to', function(e, snippets){
       $(this).closest('.topic-name').hide(225, function(){this.remove()});
       TopicHandler.appendUnaffiliatedSnippets(snippets);
     })
@@ -48,8 +48,18 @@ var TopicHandler = {
   }
 }
 
+var UnaffiliatedSnippetHandler = {
+  // removeUnaffiliatedSnippetOnDelete: function(){
+  //   $(".topic-list").on('ajax:success', '.snippet .button_to', function(){
+  //     $(this).closest('.snippet').hide(225, function(){this.remove()});
+  //   })
+  // }
+}
+
+
 $(document).ready(function(){
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
   $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
   TopicHandler.removeTopicOnDelete();
+  // UnaffiliatedSnippetHandler.removeUnaffiliatedSnippetOnDelete();
 })
