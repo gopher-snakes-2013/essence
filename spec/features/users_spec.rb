@@ -57,7 +57,7 @@ feature "User signing out" do
 
   scenario 'A user can log out', js: true do
     sign_in_as(user)
-    click_on 'Sign out'
+    click_on 'Sign Out'
     expect(current_path).to eq sign_in_path
   end
 
