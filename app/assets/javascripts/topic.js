@@ -37,7 +37,7 @@ var TopicHandler = {
   },
 
   removeTopicOnDelete: function(){
-    $(".topic-list").on('ajax:success', '.button_to', function(e, snippets){
+    $(".topic-list").on('ajax:success', '.topic-name .button_to', function(e, snippets){
       $(this).closest('.topic-name').hide(225, function(){this.remove()});
       TopicHandler.appendUnaffiliatedSnippets(snippets);
     })

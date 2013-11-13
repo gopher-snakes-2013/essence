@@ -18,7 +18,7 @@
         <%= render 'layouts/pdf_viewer/find_bar' %>
         <%= render 'layouts/pdf_viewer/secondary_toolbar' %>
         <%= render 'layouts/pdf_viewer/toolbar' %>
-        <%= render 'layouts/pdf_viewer/new_snippet_form' %>
+        <%= render 'layouts/pdf_viewer/new_snippet_form', snippet: @snippet %>
         <%= render 'layouts/pdf_viewer/menu' %>
         <%= render 'layouts/pdf_viewer/error_wraper' %>
         <%= yield %>
