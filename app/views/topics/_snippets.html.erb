@@ -1,0 +1,6 @@
+<% snippets.each do |snippet| %>
+<div class='snippet'>
+  <%= snippet.content %>
+  <%= button_to 'Delete', snippet_path(snippet), {:class => 'delete-button', method: 'delete', remote: true } %>
+</div>
+<% end %>

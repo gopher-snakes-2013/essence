@@ -12,17 +12,8 @@
   <% end %>
 
   <div class="unaffiliated">
-
-    <% if @unaffiliated.length > 0 %>
-      <h1>Unclassified snippets:</h1>
-    <% end %>
-
-    <% @unaffiliated.each do |snippet| %>
-      <div class='snippet'>
-        <%= snippet.content %>
-        <%= button_to 'Delete', snippet_path(snippet), {:class => 'delete-button', method: 'delete'} %>
-      </div>
-    <% end %>
+    <h2>Unaffiliated Snippets:</h2>
+    <%= render 'snippets', snippets: @unaffiliated %>
   </div>
 
 </div>
