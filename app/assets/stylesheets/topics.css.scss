@@ -1,53 +1,142 @@
-body {
-  text-align: center;
+  // .topic-list {
+  //   position: relative;
+  //   margin: 2.5em auto;
+  //   width: 65%;
+  //   padding: 5%;
+  //   border: 2px solid;
+  // }
 
-  .topic-list {
-    position: relative;
-    margin: 2.5em auto;
-    width: 65%;
-    padding: 5%;
-    border: 2px solid;
+//   #add-new-topic {
+//     position: absolute;
+//     top: 0.3em;
+//     right: 0.4em;
+//   }
+//   .fa-plus-square-o {
+//     font-size: 1.3em;
+//     color: #384047;
+// }
+
+//   .new-topic-form {
+//     position: absolute;
+//     width: 100%;
+//     min-width: 500px;
+//     padding: 3px;
+//   }
+
+.topic-name {
+  position: relative;
+  margin: 3em auto;
+  width: 40%;
+  height: 5em;
+  padding: 2em 1.74em;
+  background: #fff;
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 3px;
+  &:hover {
+    background-color: #f0f2f4;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
-  #add-new-topic {
-    position: absolute;
-    top: 0.3em;
-    right: 0.4em;
-  }
-  .fa-plus-square-o {
-    font-size: 1.3em;
-    color: #384047;
-}
-
-  .new-topic-form {
-    position: absolute;
-    width: 100%;
-    min-width: 500px;
-    padding: 3px;
+  &:focus {
+    background-color: #f0f2f4;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
-  .topic-name {
-    border: 1px solid;
-    padding: 3px;
-    margin: 2px;
-    font-family: helvetica;
+  &:active {
+    background-color: #f0f2f4;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  a {
+    width: 90%;
+    float: left;
+    margin-top: -0.5em;
     font-size: 2em;
+    color: #b2bac2;
 
-    a {
-      display: inline-block;
+    &:hover {
+      color: #828c92;
+      text-decoration: none;
     }
 
-    .delete-button{
-      display: inline-block;
-      margin: 6px auto 12px;
-      border: none;
-      border-radius: 4px;
-      background-color: #c0392b;
-      font-size: 0.5em;
+    &:focus {
+      color: #828c92;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: #828c92;
+      text-decoration: none;
     }
   }
 
-  .hidden {
-    display: none;
+  .delete-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 0.7em;
+    font-weight: 200;
+    color: #f0776c;
+    border: none;
+    outline: 0;
+    background-color: transparent;
+  }
+
+  .delete-button:hover {
+    color: #c0392b;
   }
 }
+
+//   }
+
+//   .hidden {
+//     display: none;
+//   }
+// }
+
+#add-new-topic {
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  padding: 0.3em 0.6em;
+  font-size: 1em;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  background: #2ecc71;
+  border: 0;
+  border-radius: 2px;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  border-width: 1px 1px 1px;
+  cursor: pointer;
+  border-style: solid;
+  border-color: #3dc264;
+}
+
+#add-new-topic:hover, #add-new-topic:focus {
+  background-color: #40d47e;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#add-new-topic:active {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #2bc06a;
+}
+
+
+

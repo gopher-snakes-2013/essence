@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
 html {
   background-color: #edeff0; /*#bdc3c7 rgba(250,250,250,0.95);*/
@@ -9,25 +9,33 @@ html {
   color: #384047;
 }
 
+body {
+  background-color: #edeff0;
+}
+
 .main_content {
   margin-top: 4em;
 }
-/* General */
+
+h2 {
+  color: #384047;
+  font-weight: 600;
+  text-align: center;
+}
 
 a {
   text-decoration: none;
 }
 
 a:hover, a:focus, a:active,
-input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
+button:hover, button:focus, button:active {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-
-/* Header */
 
 #essence_logo {
   position: absolute;
@@ -36,16 +44,16 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
   cursor: pointer;
   font-size: 1.3em;
   font-weight: 400;
-  width: 1.8em;
+  width: 1.7em;
   padding: 0.05em 0.25em;
   overflow: hidden;
-  background: #ecf0f1;
+  background: #8d9aa5;
   text-align: center;
   text-indent: 0.15em;
   text-decoration: none;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.4em;
   color: #384047;
-  border: 0.1875em solid #ecf0f1;
+  border: 0.1875em solid #8d9aa5;
   border-radius: 0.125em;
   -webkit-font-smoothing:antialiased;
   -webkit-transition: all 0.5s ease-in-out;
@@ -58,14 +66,15 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
 #essence_logo:hover, #essence_logo:focus, #essence_logo:active {
   background: transparent;
   text-indent: 0px;
-  color: #ecf0f1;
-  font-weight: 300;
+  color: white;
+  font-weight: 400;
+  border: 0.1875em solid #fff;
   width: 5.7em;
   letter-spacing: 0.1875em;
   -webkit-font-smoothing:antialiased;
 }
 
-// nav
+// Nav
 
 .navbar {
   min-height: 3.4em;
@@ -73,6 +82,10 @@ input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:act
 
 .navbar ul {
   float: right;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #8d9aa5;
 }
 
 #sign_out:hover, #sign_out:active, #sign_out:focus, {
