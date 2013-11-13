@@ -5,7 +5,7 @@
 <div class="new-topic-form hidden"> <%= render "new_topic_form" %> </div>
 <div class="topic-list">
   <div id="new-topic-errors"></div>
-  <button id="add-new-topic"><i class="fa fa-plus-square-o" ></i>Add new</button>
+  <button id="add-new-topic">Add new</button>
 
   <% @topics.all.each do |topic|%>
     <%= render 'topic', topic: topic %>

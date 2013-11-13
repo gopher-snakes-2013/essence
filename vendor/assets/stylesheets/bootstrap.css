@@ -4699,7 +4699,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > li > a {
   color: #777777;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid transparent;
 
 }
 
@@ -4729,7 +4729,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #cccccc;
+  background-color: #8d9aa5;
 }
 
 .navbar-default .navbar-collapse,
@@ -4739,8 +4739,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
-  border-top-color: #333333;
-  border-bottom-color: #333333;
+  /*border-top-color: #333333;*/
+  /*border-bottom-color: #333333;*/
 }
 
 .navbar-default .navbar-nav > .open > a,
@@ -4795,7 +4795,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse {
   background-color: #384047;
-  border-color: #ecf0f1;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4838,16 +4838,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  border: 1px solid #ecf0f1;
+  border: 1px solid transparent;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ecf0f1;
+  background-color: #8d9aa5;
 }
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #ecf0f1;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .open > a,
@@ -4855,14 +4855,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .open > a:focus {
   color: #ffffff;
   background-color: #080808;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid transparent;
 
 }
 
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid transparent;
 
 }
 
@@ -4880,11 +4880,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #ecf0f1;
+    border-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #999999;
-      border-bottom: 1px solid #ecf0f1;
+      border-bottom: 1px solid transparent;
 
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,

@@ -93,6 +93,7 @@ input {
 
 .sign-up input[type="submit"]:hover, .sign-up input[type="submit"]:focus {
   background-color: #40d47e;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .sign-up input[type="submit"]:active {
@@ -143,5 +144,4 @@ input {
   transition: all 0.5s ease-in-out;
 }
 
-//  SIGN IN
 
