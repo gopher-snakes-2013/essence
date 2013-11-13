@@ -7,12 +7,17 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    topic = Topic.find params[:snippet][:topic_id]
-    snippet = topic.snippets.build
+    topic_id = params[:snippet][:topic_id]
+    snippet = Snippet.new
     snippet.content = params[:snippet][:content]
-    snippet.user = current_user
-    snippet.save
-    render :nothing => true
+    snippet.user_id = current_user.id || params[:snippet][:user_id]
+    snippet.topic_id = topic_id
+    if snippet.save
+      render :nothing => true
+    else
+      puts "I shouldn't fail silently"
+      render :nothing => true
+    end
   end
 
   def destroy
