@@ -1,7 +1,6 @@
 class SourcesController < ApplicationController
   layout 'pdf_viewer', :only => [:show]
   def index
-
   end
 
   def show

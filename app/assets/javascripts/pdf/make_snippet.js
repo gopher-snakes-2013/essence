@@ -31,15 +31,29 @@ var SnippetHandler = {
 
   showAndFillNewSnippetForm: function(snippet){
     $('.findbar-snippet').fadeToggle();
-    $('.findbar-snippet').removeClass('hidden')
+    $('.findbar-snippet').removeClass('hidden');
     $('#snippet_content').val(snippet)
   }
 }
 
+var saveSnippet = function(e){
+  e.preventDefault()
+  console.log(this)
+  var $newSnippet = $(this);
+  $.ajax({
+    url: $newSnippet.prop('action'),
+    type: $newSnippet.prop('method'),
+    data: $newSnippet.val()
+  }).done( function(JTR) {
+    console.log(JTR);
+  })
+}
+
 $(document).ready(function(){
   $("#toolbarViewerRight").on('click', '.add-snippet', SnippetHandler.init)
-  $(".new_snippet").on('ajax:complete', function(){
-    $('.findbar-snippet').fadeToggle();
-    $('.findbar-snippet').addClass('hidden')
-  })
-})
+  $('#new_snippet').on('submit', saveSnippet)
+// $("#new_snippet").on('submit', function(){
+//   $('#new_snippet').fadeToggle();
+//   $('#new_snippet').addClass('hidden')
+// })
+});

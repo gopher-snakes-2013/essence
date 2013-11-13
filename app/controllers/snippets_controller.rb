@@ -11,8 +11,10 @@ class SnippetsController < ApplicationController
     @snippet.content = params[:snippet][:content]
     @snippet.topic_id = params[:snippet][:topic_id]
     @snippet.user_id = current_user.id || params[:snippet][:user_id]
+    puts "*"*80
+    puts @snippet
     @snippet.save
-    redirect_to root_path
+    render json: @snippet
   end
 
   def destroy
