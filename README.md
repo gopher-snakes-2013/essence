@@ -10,3 +10,6 @@ By using Essence, users will be able to:
 * extract pertinent/interesting **snippets** from documents
 * assign snippets to **clusters** of related snippets
 * view all snippets within a given cluster
+
+
+Add Snippet button can be found in _toolbar in views/layouts/pdf_viewer

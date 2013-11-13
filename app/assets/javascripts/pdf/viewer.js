@@ -22,7 +22,7 @@
 
 'use strict';
 
-var DEFAULT_URL = '';
+var DEFAULT_URL = 'https://dl.dropboxusercontent.com/u/3384840/The-App-Design-Handbook-Sample-Chapter.pdf';
 var DEFAULT_SCALE = 'auto';
 var DEFAULT_SCALE_DELTA = 1.1;
 var UNKNOWN_SCALE = 0;
@@ -4903,4 +4903,3 @@ window.addEventListener('afterprint', function afterPrint(evt) {
     PDFView.animationStartedPromise.resolve();
   });
 })();
-

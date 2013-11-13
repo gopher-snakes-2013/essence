@@ -401,9 +401,7 @@ html[dir='rtl'] .secondaryToolbar {
 
 .doorHanger,
 .doorHangerRight {
-  border: 1px solid hsla(0,0%,0%,.5);
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .doorHanger:after, .doorHanger:before,
 .doorHangerRight:after, .doorHangerRight:before {
@@ -881,6 +879,26 @@ html[dir="rtl"] .secondaryToolbarButton.print::before {
   right: 3px;
 }
 
+
+
+.toolbarButton-star::before {
+  content: url(../pdf_viewer/toolbarButton-star.png);
+  left: 7px;
+}
+
+/*html[dir="ltr"] .secondaryToolbarButton.toolbarButton-star::before {
+  left: 3px;
+}
+html[dir="rtl"] .secondaryToolbarButton.toolbarButton-star::before {
+  right: 3px;
+}
+*/
+
+
+
+
+
+
 .toolbarButton.openFile::before,
 .secondaryToolbarButton.openFile::before {
   content: url(../pdf_viewer/toolbarButton-openFile.png);
@@ -1231,9 +1249,7 @@ canvas {
   margin: 1px auto -8px auto;
   position: relative;
   overflow: visible;
-  border: 9px solid transparent;
   background-clip: content-box;
-  border-image: url(../pdf_viewer/shadow.png) 9 9 repeat;
   background-color: white;
 }
 
@@ -1303,9 +1319,6 @@ canvas {
   background-color: rgba(0, 100, 0, 0.2);
 }
 
-/* TODO: file FF bug to support ::-moz-selection:window-inactive
-   so we can override the opaque grey background when the window is inactive;
-   see https://bugzilla.mozilla.org/show_bug.cgi?id=706209 */
 ::selection { background:rgba(0,0,255,0.3); }
 ::-moz-selection { background:rgba(0,0,255,0.3); }
 

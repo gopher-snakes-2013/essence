@@ -30,14 +30,16 @@ var SnippetHandler = {
   },
 
   showAndFillNewSnippetForm: function(snippet){
-    $('#new_snippet').fadeToggle();
+    $('.findbar-snippet').fadeToggle();
+    $('.findbar-snippet').removeClass('hidden')
     $('#snippet_content').val(snippet)
   }
 }
 
 $(document).ready(function(){
-  $("#toolbarViewerRight").on('click', '.add-snippet', function(){alert("IN SNIPPET HANDLER")})
+  $("#toolbarViewerRight").on('click', '.add-snippet', SnippetHandler.init)
   $(".new_snippet").on('ajax:complete', function(){
-    $('#new_snippet').fadeToggle();
+    $('.findbar-snippet').fadeToggle();
+    $('.findbar-snippet').addClass('hidden')
   })
 })
