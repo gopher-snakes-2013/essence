@@ -86,7 +86,7 @@ feature 'User deletes a topic', js: true do
 
   before(:each) do
     sign_in_as(user)
-    click_on "Delete"
+    find('.delete-button').click
   end
 
   scenario "can click on a button to delete a topic" do
