@@ -46,7 +46,6 @@ var TopicHandler = {
   appendUnaffiliatedSnippets: function(snippets){
     $(".unaffiliated").append(snippets)
   }
-
 }
 
 $(document).ready(function(){
