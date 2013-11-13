@@ -24,7 +24,7 @@ feature 'Snippets' do
       first_snippet = user.topics.first.snippets.first.content
       find('.delete-button').click
       # then that topic's snippet will be on the page
-      find('.delete-button').click
+      click_on('Delete')
       page.should_not have_content(first_snippet)
     end
   end
