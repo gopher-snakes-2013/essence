@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <% if signed_in? -%>
-        <li><%= link_to current_user.email, root_path %></li>
+        <li class="navbar_list"><%= link_to current_user.email, root_path %></li>
         <li><%= link_to 'Library', sources_path %></li>
         <li><%= link_to t('.sign_out'), sign_out_path, :method => :delete, id: "sign_out" %></li>
 
@@ -32,7 +32,7 @@
 </div>
 
 
-<div class="main_content">
+<div class="main_content container">
   <%= yield %>
 </div>
 </body>
