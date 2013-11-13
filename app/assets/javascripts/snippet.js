@@ -34,8 +34,14 @@ var SnippetHandler = {
     $('#snippet_content').val(snippet)
   },
 
-  deleteSnippet: function(){
+  removeSnippetOnDelete: function(){
     $(this).hide(225, function(){$(this).remove()});
+  },
+
+  removeUnaffiliatedSnippetOnDelete: function(){
+    $(".topic-list").on('ajax:success', '.snippet .button_to', function(){
+      $(this).closest('.snippet').hide(225, function(){this.remove()});
+    })
   }
 }
 
@@ -44,5 +50,7 @@ $(document).ready(function(){
   $(".new_snippet").on('ajax:complete', function(){
     $('#new_snippet').fadeToggle();
   })
-  $('.snippets_list').on('click', '.snippet', SnippetHandler.deleteSnippet)
+  $('.snippets_list').on('click', '.snippet', SnippetHandler.removeSnippetOnDelete)
+  SnippetHandler.removeUnaffiliatedSnippetOnDelete();
+
 })
