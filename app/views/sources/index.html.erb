@@ -7,6 +7,10 @@
     <%= f.submit :id => 'save_source_button' %>
   <% end %>
 </div>
+<div class="bookmarklet">
+  <p>... or drag this bookmarklet to your bookmarks bar ...</p>
+  <a href="javascript:location.href='<%= root_url %>open?url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title)">Open in Essence</a>
+</div>
 
 <div class="show_pdf_library">
   <h2>Your Library:</h2>

@@ -1,5 +1,5 @@
 <% snippets.each do |snippet| %>
-<div class='snippet'>
+<div class='snippet' data-id='<%= snippet.id %>'>
   <%= snippet.content %>
   <%= link_to "Source", source_path(snippet.source_id), class: "go_back_to_source" %>
   <%= button_to '✖', snippet_path(snippet), {:class => 'delete-button', method: 'delete', remote: true } %>

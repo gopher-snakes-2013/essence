@@ -20,10 +20,10 @@ feature 'Snippets' do
   end
 
   context "User deletes an unaffiliated snippet on topic#index page" do
-    xscenario 'snippet should be removed from the page', js: true do
+    scenario 'snippet should be removed from the page', js: true do
       first_snippet = user.snippets.first.content
       find('.delete-button').click
-      # then that topic's snippet will be on the page
+      find('.delete-button').click
       page.should_not have_content(first_snippet)
     end
   end

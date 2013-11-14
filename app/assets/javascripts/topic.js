@@ -8,32 +8,23 @@ var TopicHandler = {
     }
   },
 
-  toggleNewTopicForm: function(){
-    var $form = $(".new-topic-form")
-    if($form.hasClass('hidden')){
-      $form.fadeIn(500);
-      $form.removeClass('hidden')
-    } else {
-      $form.fadeOut(500);
-      $form.addClass('hidden')
-    }
-    $(".new-topic-form").find("input[type=text], textarea").val("");
-  },
-
   displayErrors: function(e, response){
-    TopicHandler.toggleNewTopicForm();
-    $("#new-topic-errors").html(response.responseJSON.errors[0]);
-  },
-
-  clearErrorsDiv: function() {
-    $("#new-topic-errors").html("");
+    $("#new-topic-errors").hide().html(response.responseJSON.errors[0]).fadeIn(225);
   },
 
   prependTopic: function(e, response){
     var $new_topic = $(response.responseJSON)
     $(".topic-list").prepend($new_topic);
-    TopicHandler.toggleNewTopicForm();
+    TopicHandler.clearTopicForm();
     TopicHandler.clearErrorsDiv();
+  },
+
+  clearTopicForm: function(){
+    $(".new-topic-form").find("input[type=text], textarea").val("");
+  },
+
+  clearErrorsDiv: function(){
+    $("#new-topic-errors").html("").fadeOut(225);
   },
 
   removeTopicOnDelete: function(){
@@ -45,12 +36,34 @@ var TopicHandler = {
 
   appendUnaffiliatedSnippets: function(snippets){
     $(".unaffiliated").append(snippets)
+  },
+
+  affiliateSnippet: function(event, ui){
+    ui.draggable.hide(200)
+    ui.draggable.remove
+    var snippet_id = ui.draggable.attr('data-id');
+    var topic_id = $(this).attr('data-id')
+    $.ajax({
+      url: '/snippets/'+snippet_id,
+      type: 'put',
+      data: { "snippet_id": snippet_id, "topic_id": topic_id }
+    }).done(function(){
+      console.log("success!")
+    }).error(function(){
+      console.log("Error!")
+    })
   }
 }
 
+makeDroppable = function(){
+  $(this).droppable({
+    tolerance: 'pointer',
+    drop: TopicHandler.affiliateSnippet
+  })
+}
 
 $(document).ready(function(){
-  $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
-  $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
+  $(".new-topic-form form").on('ajax:complete', TopicHandler.init);
+  $('.topic-list').on('mouseenter', '.topic-name', makeDroppable)
   TopicHandler.removeTopicOnDelete();
 })
