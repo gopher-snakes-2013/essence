@@ -5,14 +5,14 @@
 
 .list_of_sources {
   width: 80%;
-  // margin-left: 10%;
+  margin: 0 auto;
   text-align: center;
-list-style: none;
+  list-style: none;
 
   li {
     width: 33%;
     float: left;
-    margin: 0 auto;
+    margin-bottom: 2.5em;
     text-align: center;
 
     img {
@@ -25,9 +25,10 @@ list-style: none;
 
     a {
       color: #384047;
-      // width: 80%;
-      // margin-left: 10%;
-      text-align: center;
+      overflow: auto;
+      width: 50%;
+      text-align: left;
+      margin-bottom: 2em;
     }
   }
 }

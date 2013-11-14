@@ -392,7 +392,7 @@ html[dir='rtl'] .secondaryToolbar {
   overflow-y: auto;
   margin-bottom: -4px;
 }
-
+/*
 .doorHangerRight,
 .doorHangerRight {
   border-radius: 2px;
@@ -416,7 +416,7 @@ html[dir='rtl'] .secondaryToolbar {
 .doorHangerRight:before {
   border-bottom-color: hsla(0,0%,0%,.5);
   border-width: 9px;
-}
+}*/
 
 html[dir='ltr'] .doorHanger:after,
 html[dir='rtl'] .doorHangerRight:after {
@@ -1680,4 +1680,12 @@ opacity: 0.6;
 
 #numPages {
   display:none;
+}
+
+
+
+@media all and (max-width: 769px) {
+    .navbar {
+      min-height: 0;
+    }
 }
