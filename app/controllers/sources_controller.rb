@@ -26,6 +26,17 @@ class SourcesController < ApplicationController
     end
   end
 
+  def open_pdf
+    source = current_user.sources.where(url: params[:url]).first
+    unless source
+      source = current_user.sources.new
+      source.title = params[:title] || params[:url]
+      source.url = params[:url]
+      source.save!
+    end
+    redirect_to source
+  end
+
   # PDF.js requests will go through this proxy
   def proxy
     uri = URI.parse(params[:url])
