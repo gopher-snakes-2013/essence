@@ -15,6 +15,6 @@ class SnippetsController < ApplicationController
   def destroy
     @snippet = Snippet.find(params[:id])
     @snippet.destroy
-    redirect_to :back
+    render :nothing => true
   end
 end
