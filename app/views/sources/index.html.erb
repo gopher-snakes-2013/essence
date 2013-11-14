@@ -4,16 +4,22 @@
   <%= form_for :source, :html => {class: "addSourceUrl"}, remote: true do |f| %>
     <%= f.text_field :title, placeholder: "Title" %>
     <%= f.text_field :url, placeholder: "URL" %>
-    <%= f.submit %>
+    <%= f.submit :id => 'save_source_button' %>
   <% end %>
 </div>
 
 <div class="show_pdf_library">
   <h2>Your Library:</h2>
 
-  <ul>
+  <ul class="list_of_sources">
     <% @sources.each do |source| %>
-    <li><%= link_to source.title, source %></li>
+    <li>
+      <%= image_tag("placeholder-cover.png", alt: "placeholder PDF cover") %>
+      <%= link_to source.title, source %></li>
+
     <% end %>
   </ul>
 </div>
+
+
+

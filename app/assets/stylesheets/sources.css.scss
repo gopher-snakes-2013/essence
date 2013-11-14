@@ -1,0 +1,33 @@
+.addSourceUrl {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.list_of_sources {
+  width: 80%;
+  // margin-left: 10%;
+  text-align: center;
+list-style: none;
+
+  li {
+    width: 33%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      margin: 0 auto;
+      margin-bottom: 0.8em;
+      height: 88px;
+      width: 69px;
+      display: block;
+    }
+
+    a {
+      color: #384047;
+      // width: 80%;
+      // margin-left: 10%;
+      text-align: center;
+    }
+  }
+}
