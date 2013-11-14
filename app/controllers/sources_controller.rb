@@ -16,10 +16,14 @@ class SourcesController < ApplicationController
 
   def create
     source = current_user.sources.new
-    source.title = params[:title] || params[:url]
-    source.url = params[:url]
-    source.save
-    redirect_to source
+    source.title = params[:source][:title]
+    source.url = params[:source][:url]
+
+    if source.save
+      render :json => render_to_string(partial: "new_source_url", locals: { source: source }).to_json
+    else
+      render :json => { errors: source.errors.full_messages }.to_json
+    end
   end
 
   # PDF.js requests will go through this proxy

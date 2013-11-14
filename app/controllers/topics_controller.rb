@@ -11,9 +11,9 @@ class TopicsController < ApplicationController
     new_topic.user_id = current_user.id || params[:topic][:user_id]
     new_topic.name = params[:topic][:name]
     if new_topic.save
-      render :json => { new_topic: render_to_string(partial: "topic", locals: { topic: new_topic })}
+      render :json => render_to_string(partial: "topic", locals: { topic: new_topic }).to_json
     else
-      render :json => { errors: new_topic.errors.full_messages }
+      render :json => { errors: new_topic.errors.full_messages }.to_json
     end
   end
 

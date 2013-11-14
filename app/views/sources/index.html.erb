@@ -1,9 +1,19 @@
-<div>
-
+<div class="library_errors"></div>
+<div class="add_pdf">
+  <h2>Add a new PDF:</h2>
+  <%= form_for :source, :html => {class: "addSourceUrl"}, remote: true do |f| %>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_field :url, placeholder: "URL" %>
+    <%= f.submit %>
+  <% end %>
 </div>
 
-<ul>
-  <% @sources.each do |source| %>
-  <li><%= link_to source.title, source %></li>
-  <% end %>
-</ul>
+<div class="show_pdf_library">
+  <h2>Your Library:</h2>
+
+  <ul>
+    <% @sources.each do |source| %>
+    <li><%= link_to source.title, source %></li>
+    <% end %>
+  </ul>
+</div>
