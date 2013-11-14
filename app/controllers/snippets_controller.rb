@@ -12,10 +12,10 @@ class SnippetsController < ApplicationController
     snippet.content = params[:snippet][:content]
     snippet.user_id = current_user.id || params[:snippet][:user_id]
     snippet.topic_id = topic_id
+    snippet.source_id = params[:snippet][:source_id]
     if snippet.save
       render :nothing => true
     else
-      puts "I shouldn't fail silently"
       render :nothing => true
     end
   end

@@ -3,6 +3,7 @@
     <%= f.label :topic %>
     <%= f.collection_select(:topic_id, @sorted_topics, :id, :name, :prompt => "Select a topic") %>
     <%= f.hidden_field :content, value: "test" %>
+    <%= f.hidden_field :source_id, value: @source.id %>
     <%= f.submit "Save" %>
   <% end %>
 </div>
