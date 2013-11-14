@@ -9,9 +9,13 @@ var TopicHandler = {
   },
 
   displayErrors: function(e, response){
-    TopicHandler.toggleNewTopicForm();
-    $("#new-topic-errors").html(response.responseJSON.errors[0]);
+    $("#new-topic-errors").hide().html(response.responseJSON.errors[0]).fadeIn(225);
   },
+
+  // $('#foo').fadeOut("slow", function(){
+  //   $('#foo').html(data);
+  //   $('#foo').fadeIn("slow");
+  // }
 
   prependTopic: function(e, response){
     var $new_topic = $(response.responseJSON)
@@ -25,7 +29,7 @@ var TopicHandler = {
   },
 
   clearErrorsDiv: function(){
-    $("#new-topic-errors").html("");
+    $("#new-topic-errors").html("").fadeOut(225);
   },
 
   removeTopicOnDelete: function(){

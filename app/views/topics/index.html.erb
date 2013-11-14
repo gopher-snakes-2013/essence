@@ -1,3 +1,4 @@
+<div id="new-topic-errors"></div>
 <h1>Topics</h1>
 <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 <div class="topic-list">
@@ -6,10 +7,8 @@
     <%= render 'topic', topic: topic %>
   <% end %>
 
-<div id="new-topic-errors"></div>
-
   <div class="unaffiliated">
-    <h2>Unaffiliated Snippets:</h2>
+    <h2>Unaffiliated Snippets</h2>
     <%= render 'snippets', snippets: @unaffiliated %>
   </div>
 
