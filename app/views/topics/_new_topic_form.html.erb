@@ -1,5 +1,4 @@
 <%= form_for @topic, remote: true, class: "new_topic_form" do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create Topic" %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.submit "Add", id: "submit_new_topic" %>
 <% end %>

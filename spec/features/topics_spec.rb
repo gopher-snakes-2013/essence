@@ -35,14 +35,14 @@ feature 'User creates a topic' do
 
   scenario "can click on the plus icon to view new topic form", js: true do
     click_on("Add new")
-    expect(page).to have_content("Name")
+    expect(page).to have_content("Add")
   end
 
   context "with valid params", js: true do
     scenario "is successful" do
       click_on("Add new")
       fill_in 'topic_name', with: "Node.js"
-      click_on 'Create Topic'
+      click_on 'Add'
       expect(page).to have_content("Node.js")
     end
   end
@@ -50,14 +50,14 @@ feature 'User creates a topic' do
   context "with invalid params", js: true do
     scenario "with no name" do
       click_on("Add new")
-      click_on 'Create Topic'
+      click_on 'Add'
       expect(page).to have_content("Name can't be blank")
     end
 
     scenario "with repeated name" do
       click_on("Add new")
       fill_in 'topic_name', with: topic.name
-      click_on 'Create Topic'
+      click_on 'Add'
       expect(page).to have_content("Name has already been taken")
     end
   end
