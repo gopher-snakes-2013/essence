@@ -43,7 +43,7 @@ body {
   height: 8px;
   background: #fff;
   border-radius: 5px 5px 0 0;
-    background-image: -webkit-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
+  background-image: -webkit-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: -moz-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: -o-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: linear-gradient(to right, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
@@ -133,6 +133,7 @@ input {
 .sign_in_link {
   color: #999999;
   display: block;
+  text-align: center;
 }
 
 .sign_in_link:hover, .sign_in_link:focus, .sign_in_link:active {
@@ -142,6 +143,7 @@ input {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+
 }
 
 

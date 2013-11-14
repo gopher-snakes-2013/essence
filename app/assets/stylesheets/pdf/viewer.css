@@ -393,7 +393,7 @@ html[dir='rtl'] .secondaryToolbar {
   margin-bottom: -4px;
 }
 
-.doorHanger,
+.doorHangerRight,
 .doorHangerRight {
   border-radius: 2px;
 }
@@ -1307,8 +1307,21 @@ canvas {
   background-color: rgba(0, 100, 0, 0.2);
 }
 
-::selection { background:#fecf71; }
-::-moz-selection { background:#fecf71; }
+/*::selection { background:#fecf71; }
+::-moz-selection { background:#fecf71; }*/
+
+::selection {
+background-color: #40d47e;
+opacity: 0.6;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+::-moz-selection {
+background-color: #40d47e;
+opacity: 0.6;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 
 .annotText > div {
   z-index: 200;

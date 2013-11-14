@@ -1,55 +1,38 @@
-/*  // .topic-list {
-  //   position: relative;
-  //   margin: 2.5em auto;
-  //   width: 65%;
-  //   padding: 5%;
-  //   border: 2px solid;
-  // }
-
-//   #add-new-topic {
-//     position: absolute;
-//     top: 0.3em;
-//     right: 0.4em;
-//   }
-//   .fa-plus-square-o {
-//     font-size: 1.3em;
-//     color: #384047;
-// }
-
-//   .new-topic-form {
-//     position: absolute;
-//     width: 100%;
-//     min-width: 500px;
-//     padding: 3px;
-//   }*/
-
 .topic-name {
   position: relative;
   margin: 3em auto;
-  width: 40%;
-  height: 5em;
+  width: 60%;
   padding: 2em 1.74em;
   background: #fff;
-  border-bottom: 1px solid #c4c4c4;
   border-radius: 3px;
+  overflow:auto;
+  color: black;
+  border-top: 4px solid #2ecc71;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+
   &:hover {
-    background-color: #f0f2f4;
+    background-color: #fafafa;
   }
 
   &:focus {
-    background-color: #f0f2f4;
+    background-color: #fafafa;
   }
 
   &:active {
-    background-color: #f0f2f4;
+    background-color: #fafafa;
   }
 
   a {
-    width: 90%;
     float: left;
+    width: 100%;
     margin-top: -0.5em;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #b2bac2;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 
     &:hover {
       color: #828c92;
@@ -84,18 +67,14 @@
   }
 }
 
-//   }
+.container { position: relative;}
 
-//   .hidden {
-//     display: none;
-//   }
-// }
 
 #add-new-topic {
   position: absolute;
-  right: 10%;
-  top: 20%;
-  padding: 0.3em 0.6em;
+  right: 21%;
+  top: 6em;
+  padding: 0.5em 1.3em;
   font-size: 1em;
   font-weight: 300;
   color: #fff;
@@ -107,8 +86,9 @@
   border: 1px solid transparent;
   border-width: 1px 1px 1px;
   cursor: pointer;
-  border-style: solid;
   border-color: #3dc264;
+  border-bottom: 1px solid #c4c4c4;
+
 }
 
 #add-new-topic:hover, #add-new-topic:focus {
@@ -123,5 +103,139 @@
   background-color: #2bc06a;
 }
 
+.new-topic-form {
+  width: 50%;
+  position: absolute;
+  right: 12%;
+  top: 6em;
+}
 
+#topic_name {
+  width: 45%;
+  height: 2.55em;
+  font-size: 1em;
+  background: #fff;
+  border-radius: 3px;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  cursor: text;
+  text-indent: 1em;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+#topic_name:focus, #source_title, #source_url {
+  outline: none;
+}
+
+#submit_new_topic, #save_source_button {
+  padding: 0.5em 0.6em;
+  font-size: 1em;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  background: #669ae1;
+  border: 0;
+  border-radius: 3px;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-bottom: 1px solid #c4c4c4;
+
+}
+
+#submit_new_topic:hover, #submit_new_topic:focus,
+#save_source_button:hover, #save_source_button:focus {
+  background-color: #75a4e4;
+}
+
+#submit_new_topic:active, #save_source_button:active {
+  background-color: #5c8bcb;
+}
+
+
+#source_title, #source_url {
+  width: 40%;
+  height: 2.55em;
+  font-size: 1em;
+  background: #fff;
+  border-radius: 3px;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  cursor: text;
+  text-indent: 1em;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+
+// snippets
+
+.snippet {
+  position: relative;
+  margin: 3em auto;
+  width: 60%;
+  padding: 2em 1.74em;
+  background: #fff;
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 3px;
+  overflow:auto;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+  }
+
+  &:focus {
+    cursor: pointer;
+    background-color: #fafafa;
+  }
+
+  &:active {
+    cursor: pointer;
+    background-color: #fafafa;
+  }
+
+  .delete-button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 0.7em;
+    font-weight: 200;
+    color: #f0776c;
+    border: none;
+    outline: 0;
+    background-color: transparent;
+
+    &:hover {
+      color: #c0392b;
+    }
+  }
+
+  .go_back_to_source {
+    position: absolute;
+    bottom: 5px;
+    right: 9px;
+    font-size: 0.7em;
+    color: #669ae1;
+
+    &:hover {
+      color: #4b71a5;
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 990px) {
+  .new-topic-form {
+    width: 70%;
+  position: absolute;
+  right: 17%;
+  top: 6em;
+  }
+}
 
