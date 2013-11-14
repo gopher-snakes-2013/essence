@@ -48,9 +48,18 @@ var TopicHandler = {
   },
 
   affiliateSnippet: function(event, ui){
-    console.log(ui.draggable);
-    var snippet = ui.draggable;
-    snippet.hide()
+    ui.draggable.hide(200)
+    var snippet_id = ui.draggable.attr('data-id');
+    var topic_id = $(this).attr('data-id')
+    $.ajax({
+      url: '/snippets/'+snippet_id,
+      type: 'put',
+      data: { "snippet_id": snippet_id, "topic_id": topic_id }
+    }).done(function(){
+      console.log("success!")
+    }).error(function(){
+      console.log("Error!")
+    })
   }
 }
 
