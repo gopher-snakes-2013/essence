@@ -30,7 +30,11 @@ class SourcesController < ApplicationController
     source = current_user.sources.where(url: params[:url]).first
     unless source
       source = current_user.sources.new
-      source.title = params[:title] || params[:url]
+      if params[:title] == ""
+        source.title = params[:url]
+      else
+        source.title = params[:title]
+      end
       source.url = params[:url]
       source.save!
     end
