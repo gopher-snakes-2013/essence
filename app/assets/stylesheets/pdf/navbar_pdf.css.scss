@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
+a:hover, a:focus, a:active,
+input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
+button:hover, button:focus, button:active {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#essence_logo {
+  position: absolute;
+  left: 16px;
+  top: 6.4px;
+  cursor: pointer;
+  font-size: 21px;
+  font-weight: 400;
+  width: 17px;
+  padding: 0.8px 4px;
+  overflow: hidden;
+  background: #8d9aa5;
+  text-align: center;
+  text-indent: 2.4px;
+  text-decoration: none;
+  letter-spacing: 6px;
+  color: #384047;
+  border: 3px solid #8d9aa5;
+  border-radius: 2px;
+  -webkit-font-smoothing:antialiased;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#essence_logo:hover, #essence_logo:focus, #essence_logo:active {
+  background: transparent;
+  text-indent: 0px;
+  color: white;
+  font-weight: 400;
+  border: 3px solid #fff;
+  width: 98px;
+  letter-spacing: 3px;
+  -webkit-font-smoothing:antialiased;
+}
+
+// Nav
+
+.navbar {
+  min-height: 3.4em;
+}
+
+.navbar ul {
+  float: right;
+  list-style: none;
+  margin-top: 14px;
+}
+
+.navbar ul li {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.navbar ul li a {
+  color: #8d9aa5;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover, .navbar ul li a:focus, .navbar ul li a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #8d9aa5;
+}
+
+#sign_out:hover, #sign_out:active, #sign_out:focus, {
+  color: #e15258;
+}
+
+.main_content {
+  background-color: #edeff0;
+}
+
+// Navbar
+
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+
+.navbar-inverse {
+  background-color: #384047;
+  border-color: transparent;
+}
+
+.navbar-toggle{
+  display: none;
+}
+
+#thumbnailView {
+  margin-top: 45px;
+}
+
+#viewerContainer {
+  margin-top: 45px;
+}
+
+#toolbarSidebar {
+  margin-top: 45px;
+}
+
+#scaleSelectContainer {
+  display: none;
+}
+
+.new_snippet {
+  color: #8d9aa5;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .navbar {
+    position: relative;
+    min-height: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+  }
+
+  .navbar {
+    border-radius: 4px;
+  }
+
+  .navbar:before,
+  .navbar:after {
+    display: table;
+    content: " ";
+  }
+
+  .navbar:after {
+    clear: both;
+  }
+
+  .navbar:before,
+  .navbar:after {
+    display: table;
+    content: " ";
+  }
+
+  .navbar:after {
+    clear: both;
+  }
+
+  .navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  }
+}
+
+@media screen and (max-width: 660px) {
+
+
+#pageNumberLabel, #pageNumber {
+  display: none;
+}
+
+}
