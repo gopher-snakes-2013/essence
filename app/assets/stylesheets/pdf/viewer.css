@@ -20,13 +20,12 @@
 
 html {
   height: 100%;
-  /* Font size is needed to make the activity bar the corect size. */
   font-size: 10px;
 }
 
 body {
-  height: 95%;
-  background-color: #404040;
+  height: 100%;
+  background-color: #384047;
   overflow: hidden;
 }
 
@@ -226,7 +225,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
 }
 
 #sidebarContent {
-  top: 32px;
+  top: 45px;
   bottom: 0;
   overflow: auto;
   position: absolute;
@@ -268,8 +267,7 @@ html[dir='rtl'] #sidebarContent {
 #toolbarSidebar {
   width: 200px;
   height: 32px;
-  background-color: #424242; /* fallback */
-                    linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
+  background-color: #384047§; /* fallback */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25),
 
               inset 0 -1px 0 hsla(0,0%,100%,.05),
@@ -280,8 +278,7 @@ html[dir='rtl'] #sidebarContent {
 #toolbarContainer, .findbar, .secondaryToolbar {
   position: relative;
   height: 32px;
-  background-color: #474747; /* fallback */
-                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  background-color: #384047; /* fallback */
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
               inset 0 -1px 0 hsla(0,0%,100%,.05),
@@ -291,6 +288,7 @@ html[dir='rtl'] #sidebarContent {
 
 #toolbarViewer {
   height: 32px;
+  margin-top: 45px;
 }
 
 #loadingBar {
@@ -307,7 +305,7 @@ html[dir='rtl'] #sidebarContent {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #ddd;
+  background-color: #8d9aa5;
   overflow: hidden;
   -webkit-transition: width 200ms;
   transition: width 200ms;
@@ -347,7 +345,7 @@ html[dir='rtl'] #sidebarContent {
 }
 
 .findbar, .secondaryToolbar {
-  top: 32px;
+  top: 80px;
   position: absolute;
   z-index: 10000;
   height: 32px;
@@ -416,7 +414,7 @@ html[dir='rtl'] .secondaryToolbar {
 }
 .doorHanger:after,
 .doorHangerRight:after {
-  border-bottom-color: hsla(0,0%,32%,.99);
+  border-bottom-color: #384047;
   border-width: 8px;
 }
 .doorHanger:before,
@@ -880,8 +878,6 @@ html[dir="rtl"] .secondaryToolbarButton.print::before {
   right: 3px;
 }
 
-
-
 .toolbarButton-star::before {
   content: url(../pdf_viewer/toolbarButton-star.png);
   left: 7px;
@@ -894,11 +890,6 @@ html[dir="rtl"] .secondaryToolbarButton.toolbarButton-star::before {
   right: 3px;
 }
 */
-
-
-
-
-
 
 .toolbarButton.openFile::before,
 .secondaryToolbarButton.openFile::before {
@@ -1049,6 +1040,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   min-width: 16px;
   text-align: right;
   width: 40px;
+  color: #8d9aa5;
 }
 
 .toolbarField.pageNumber::-webkit-inner-spin-button,
@@ -1073,7 +1065,7 @@ html[dir='rtl'] .verticalToolbarSeparator {
   margin: 4px 2px 4px 0;
   border: 1px solid transparent;
   border-radius: 2px;
-  color: hsl(0,0%,85%);
+  color: #8d9aa5;
   font-size: 12px;
   line-height: 14px;
   text-align: left;
@@ -1616,11 +1608,11 @@ canvas {
 
   html[dir='ltr'] .outerCenter {
     float: left;
-    left: 205px;
+    left: 250px;
   }
   html[dir='rtl'] .outerCenter {
     float: right;
-    right: 205px;
+    right: 250px;
   }
 
   #outerContainer .hiddenLargeView,
@@ -1661,12 +1653,12 @@ canvas {
   html[dir='ltr'] #outerContainer.sidebarMoving .outerCenter,
   html[dir='ltr'] #outerContainer.sidebarOpen .outerCenter,
   html[dir='ltr'] .outerCenter {
-    left: 156px;
+    left: 60px;
   }
   html[dir='rtl'] #outerContainer.sidebarMoving .outerCenter,
   html[dir='rtl'] #outerContainer.sidebarOpen .outerCenter,
   html[dir='rtl'] .outerCenter {
-    right: 156px;
+    right: 60px;
   }
   .toolbarButtonSpacer {
     width: 0;
