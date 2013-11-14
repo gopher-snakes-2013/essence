@@ -268,8 +268,7 @@ html[dir='rtl'] #sidebarContent {
 #toolbarSidebar {
   width: 200px;
   height: 32px;
-  background-color: #424242; /* fallback */
-                    linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
+  background-color: #424242; 
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25),
 
               inset 0 -1px 0 hsla(0,0%,100%,.05),
@@ -280,8 +279,7 @@ html[dir='rtl'] #sidebarContent {
 #toolbarContainer, .findbar, .secondaryToolbar {
   position: relative;
   height: 32px;
-  background-color: #474747; /* fallback */
-                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  background-color: #474747; 
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
               inset 0 -1px 0 hsla(0,0%,100%,.05),
@@ -1404,8 +1402,7 @@ canvas {
   color: hsl(0,0%,85%);
   line-height: 14px;
   text-align: center;
-  background-color: #474747; /* fallback */
-                    linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+  background-color: #474747;
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
               inset 0 -1px 0 hsla(0,0%,100%,.05),

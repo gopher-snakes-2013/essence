@@ -13,18 +13,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
-  gem 'debugger'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-end
-
 group :development do
   gem 'better_errors'
   gem 'sextant'
+  gem 'debugger'
 end
 
 group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'capybara'
   gem 'database_cleaner'
   gem "factory_girl_rails", "~> 4.0"
