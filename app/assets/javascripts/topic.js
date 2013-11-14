@@ -45,12 +45,36 @@ var TopicHandler = {
 
   appendUnaffiliatedSnippets: function(snippets){
     $(".unaffiliated").append(snippets)
+  },
+
+  affiliateSnippet: function(event, ui){
+    // event.stopPropogation()
+    ui.draggable.hide(200)
+    ui.draggable.remove
+    var snippet_id = ui.draggable.attr('data-id');
+    var topic_id = $(this).attr('data-id')
+    $.ajax({
+      url: '/snippets/'+snippet_id,
+      type: 'put',
+      data: { "snippet_id": snippet_id, "topic_id": topic_id }
+    }).done(function(){
+      console.log("success!")
+    }).error(function(){
+      console.log("Error!")
+    })
   }
 }
 
+makeDroppable = function(){
+  $(this).droppable({
+    tolerance: 'pointer',
+    drop: TopicHandler.affiliateSnippet
+  })
+}
 
 $(document).ready(function(){
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
-  $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
+  $(".new-topic-form form").on('ajax:complete', TopicHandler.init);
   TopicHandler.removeTopicOnDelete();
+  $('.topic-list').on('mouseenter', '.topic-name', makeDroppable)
 })
