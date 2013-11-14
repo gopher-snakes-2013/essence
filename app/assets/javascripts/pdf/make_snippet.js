@@ -12,8 +12,12 @@ var SnippetHandler = {
     if(!snippet.length){
       console.log("Please select some text!")
     } else {
+      if (snippet.length > 254){
+        alert("Sorry, your selection was too long! The limit is 255 characters. <3 Essence")
+      } else {
       snippet = SnippetHandler.formatText(snippet)
       SnippetHandler.showAndFillNewSnippetForm(snippet)
+      }
     }
   },
 
