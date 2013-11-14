@@ -2,8 +2,14 @@ require 'spec_helper'
 
 FactoryGirl.define do
 
+  factory :source do
+    title "Alek Sucks"
+    url "http://www.google.com"
+  end
   factory :snippet do
     content Faker::Lorem.sentences
+    source
+    user
   end
 
   factory :topic do
