@@ -26,10 +26,10 @@ feature 'sources library' do
       expect(current_path).to eq('/sources/1')
     end
 
-    xit "can create a new source in their library" do
+    it "can create a new source in their library" do
       click_on('Library')
 
-      page.should have_button("Add PDF")
+      page.should have_button("Save Source")
     end
   end
 end
