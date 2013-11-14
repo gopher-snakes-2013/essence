@@ -13,7 +13,7 @@ var SnippetHandler = {
 }
 
 makeDraggable = function(){
-  $(this).draggable()
+  $(this).draggable({ revert: true, revertDuration: 150 })
 }
 
 $(document).ready(function(){

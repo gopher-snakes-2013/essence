@@ -48,7 +48,9 @@ var TopicHandler = {
   },
 
   affiliateSnippet: function(event, ui){
+    // event.stopPropogation()
     ui.draggable.hide(200)
+    ui.draggable.remove
     var snippet_id = ui.draggable.attr('data-id');
     var topic_id = $(this).attr('data-id')
     $.ajax({
@@ -65,7 +67,7 @@ var TopicHandler = {
 
 makeDroppable = function(){
   $(this).droppable({
-    tolerance: 'touch',
+    tolerance: 'pointer',
     drop: TopicHandler.affiliateSnippet
   })
 }
@@ -74,5 +76,5 @@ $(document).ready(function(){
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
   $(".new-topic-form form").on('ajax:complete', TopicHandler.init);
   TopicHandler.removeTopicOnDelete();
-  $('.topic-list').on('mouseover', '.topic-name', makeDroppable)
+  $('.topic-list').on('mouseenter', '.topic-name', makeDroppable)
 })
