@@ -19,5 +19,5 @@ makeDraggable = function(){
 $(document).ready(function(){
   SnippetHandler.removeSnippetOnDelete();
   SnippetHandler.removeUnaffiliatedSnippetOnDelete();
-  $(".unaffiliated").on('click', '.snippet', makeDraggable)
+  $(".unaffiliated").on('mouseover', '.snippet', makeDraggable)
 })
