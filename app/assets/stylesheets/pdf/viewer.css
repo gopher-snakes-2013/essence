@@ -25,8 +25,9 @@ html {
 }
 
 body {
-  height: 100%;
+  height: 95%;
   background-color: #404040;
+  overflow: hidden;
 }
 
 body,
@@ -1319,8 +1320,8 @@ canvas {
   background-color: rgba(0, 100, 0, 0.2);
 }
 
-::selection { background:rgba(0,0,255,0.3); }
-::-moz-selection { background:rgba(0,0,255,0.3); }
+::selection { background:#fecf71; }
+::-moz-selection { background:#fecf71; }
 
 .annotText > div {
   z-index: 200;
@@ -1676,4 +1677,8 @@ canvas {
   #scaleSelectContainer, #pageNumberLabel {
     display: none;
   }
+}
+
+#numPages {
+  display:none;
 }
