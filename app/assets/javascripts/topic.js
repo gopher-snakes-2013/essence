@@ -12,11 +12,6 @@ var TopicHandler = {
     $("#new-topic-errors").hide().html(response.responseJSON.errors[0]).fadeIn(225);
   },
 
-  // $('#foo').fadeOut("slow", function(){
-  //   $('#foo').html(data);
-  //   $('#foo').fadeIn("slow");
-  // }
-
   prependTopic: function(e, response){
     var $new_topic = $(response.responseJSON)
     $(".topic-list").prepend($new_topic);
@@ -41,10 +36,34 @@ var TopicHandler = {
 
   appendUnaffiliatedSnippets: function(snippets){
     $(".unaffiliated").append(snippets)
+  },
+
+  affiliateSnippet: function(event, ui){
+    ui.draggable.hide(200)
+    ui.draggable.remove
+    var snippet_id = ui.draggable.attr('data-id');
+    var topic_id = $(this).attr('data-id')
+    $.ajax({
+      url: '/snippets/'+snippet_id,
+      type: 'put',
+      data: { "snippet_id": snippet_id, "topic_id": topic_id }
+    }).done(function(){
+      console.log("success!")
+    }).error(function(){
+      console.log("Error!")
+    })
   }
 }
 
+makeDroppable = function(){
+  $(this).droppable({
+    tolerance: 'pointer',
+    drop: TopicHandler.affiliateSnippet
+  })
+}
+
 $(document).ready(function(){
-  $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
+  $(".new-topic-form form").on('ajax:complete', TopicHandler.init);
+  $('.topic-list').on('mouseenter', '.topic-name', makeDroppable)
   TopicHandler.removeTopicOnDelete();
 })

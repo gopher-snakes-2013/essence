@@ -12,6 +12,12 @@ class SnippetsController < ApplicationController
     end
   end
 
+  def update
+    snippet = Snippet.find(params[:snippet_id])
+    snippet.update_attribute('topic_id', params[:topic_id])
+    render :nothing => true
+  end
+
   def destroy
     @snippet = Snippet.find(params[:id])
     @snippet.destroy
