@@ -10,7 +10,7 @@ var SnippetHandler = {
   init: function(){
     var snippet = SnippetHandler.captureSnippet()
     if(!snippet.length){
-      console.log("Please select some text!")
+      alert("Please select some text! The limit is 255 characters. <3 Essence")
     } else {
       if (snippet.length > 254){
         alert("Sorry, your selection was too long! The limit is 255 characters. <3 Essence")
