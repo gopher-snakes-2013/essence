@@ -2,25 +2,24 @@ require 'spec_helper'
 
 describe SnippetsController do
 
-  let!(:user){ FactoryGirl.build(:user) }
-  let!(:topic){ FactoryGirl.create(:topic_with_snippets) }
+  let!(:user) { FactoryGirl.build(:user) }
+  let!(:topic) { FactoryGirl.create(:topic_with_snippets) }
 
-  before(:each) do
+  before do
     sign_in_as(user)
   end
 
-  context "#new" do
-    it "returns a valid response when a new snippet is instantiated" do
-      get :new
-      response.status.should eq 200
-    end
-  end
-
   context "#create" do
-    it "creates a new snippet with valid params" do
+    it "should create a new snippet with valid params" do
       expect {
         post :create, snippet: { user_id: topic.user_id, topic_id: topic.id, content: 'this is content' }
       }.to change { Snippet.count }.by(1)
+    end
+
+    it "should not create a new snippet" do
+      expect {
+        post :create, snippet: { user_id: topic.user_id}
+      }.not_to change { Snippet.count }
     end
   end
 
