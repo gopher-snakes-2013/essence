@@ -5,7 +5,8 @@ gem 'rails', '3.2.15'
 gem 'pg'
 gem 'jquery-rails'
 gem 'clearance'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'jquery-ui-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

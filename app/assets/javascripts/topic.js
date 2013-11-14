@@ -45,12 +45,25 @@ var TopicHandler = {
 
   appendUnaffiliatedSnippets: function(snippets){
     $(".unaffiliated").append(snippets)
+  },
+
+  affiliateSnippet: function(event, ui){
+    console.log(ui.draggable);
+    var snippet = ui.draggable;
+    snippet.hide()
   }
 }
 
+makeDroppable = function(){
+  $(this).droppable({
+    tolerance: 'touch',
+    drop: TopicHandler.affiliateSnippet
+  })
+}
 
 $(document).ready(function(){
   $("#add-new-topic").on('click', TopicHandler.toggleNewTopicForm);
-  $(".new-topic-form form").on('ajax:complete', TopicHandler.init)
+  $(".new-topic-form form").on('ajax:complete', TopicHandler.init);
   TopicHandler.removeTopicOnDelete();
+  $('.topic-list').on('mouseover', '.topic-name', makeDroppable)
 })
