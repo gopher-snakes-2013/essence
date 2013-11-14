@@ -1,4 +1,3 @@
-<div id="new-topic-errors"></div>
 <div>Beauty is the essence of wetness.</div>
 <div>And wetness is the essence of beauty.</div>
 <div class="new-topic-form hidden"> <%= render "new_topic_form" %> </div>
@@ -8,6 +7,8 @@
   <% @topics.all.each do |topic|%>
     <%= render 'topic', topic: topic %>
   <% end %>
+
+<div id="new-topic-errors"></div>
 
   <div class="unaffiliated">
     <h2>Unaffiliated Snippets:</h2>
