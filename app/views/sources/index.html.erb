@@ -1,29 +1,25 @@
 <div class="library_errors"></div>
 <div class="add_pdf">
-  <h2>Add a new PDF:</h2>
   <%= form_for :source, :html => {class: "addSourceUrl"}, remote: true do |f| %>
     <%= f.text_field :title, placeholder: "Title" %>
-    <%= f.text_field :url, placeholder: "URL" %>
+    <%= f.text_field :url, placeholder: "Add URL to PDF" %>
     <%= f.submit :id => 'save_source_button' %>
   <% end %>
 </div>
 <div class="bookmarklet">
-  <p>... or drag this bookmarklet to your bookmarks bar ...</p>
-  <a href="javascript:location.href='<%= root_url %>open?url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title)">Open in Essence</a>
+  <p id="bookmarklet-description">Or drag this bookmarklet to your bookmarks bar:</p>
+  <a href="javascript:location.href='<%= root_url %>open?url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title)" id="bookmarklet">Open in Essence</a>
 </div>
 
 <div class="show_pdf_library">
-  <h2>Your Library:</h2>
+  <h2 id="your_library">Your Library:</h2>
 
   <ul class="list_of_sources">
     <% @sources.each do |source| %>
     <li>
-      <%= image_tag("placeholder-cover.png", alt: "placeholder PDF cover") %>
+      <%= link_to image_tag("placeholder-cover.png"), source_path(source) %>
       <%= link_to source.title, source %>
     </li>
     <% end %>
   </ul>
 </div>
-
-
-
