@@ -29,6 +29,50 @@
       width: 50%;
       text-align: left;
       margin-bottom: 2em;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
+}
+
+.add_pdf {
+  margin-top: 2em;
+}
+
+.show_pdf_library #your_library {
+  margin-top: 5em;
+}
+
+#bookmarklet-description {
+  float: left;
+  width: 60%;
+  text-align: right;
+}
+
+#bookmarklet {
+  float: left;
+  margin-left: 1em;
+  padding: 0.4em 0.6em;
+  font-size: 0.7em;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  background: #2ecc71;
+  border: 0;
+  border-radius: 3px;
+  border-color: rgba(0,0,0,0.7);
+  border: 1px solid transparent;
+  border-width: 1px 1px 1px;
+  cursor: pointer;
+  border-color: #3dc264;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+#bookmarklet:hover, #bookmarklet:focus {
+  background-color: #40d47e;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  text-decoration: none;
 }

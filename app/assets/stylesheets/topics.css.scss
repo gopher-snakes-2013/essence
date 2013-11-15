@@ -67,34 +67,11 @@
   }
 }
 
+.unaffiliated h1 {
+  margin-top: 3em;
+}
+
 .container { position: relative;}
-
-
-#add-new-topic {
-  position: absolute;
-  right: 21%;
-  top: 6em;
-  padding: 0.5em 1.3em;
-  font-size: 1em;
-  font-weight: 300;
-  color: #fff;
-  text-align: center;
-  background: #2ecc71;
-  border: 0;
-  border-radius: 2px;
-  border-color: rgba(0,0,0,0.7);
-  border: 1px solid transparent;
-  border-width: 1px 1px 1px;
-  cursor: pointer;
-  border-color: #3dc264;
-  border-bottom: 1px solid #c4c4c4;
-
-}
-
-#add-new-topic:hover, #add-new-topic:focus {
-  background-color: #40d47e;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
 
 #add-new-topic:active {
   outline: none;
@@ -103,11 +80,13 @@
   background-color: #2bc06a;
 }
 
+#new_topic {
+  margin-left: 25%;
+}
+
 .new-topic-form {
   width: 50%;
-  position: absolute;
-  right: 12%;
-  top: 6em;
+  margin: 0 auto;
 }
 
 #new-topic-errors {
@@ -115,7 +94,7 @@
 }
 
 #topic_name {
-  width: 45%;
+  margin: 0 auto;
   height: 2.55em;
   font-size: 1em;
   background: #fff;
@@ -129,6 +108,10 @@
 
 #topic_name:focus, #source_title, #source_url {
   outline: none;
+}
+
+#new_topic_header {
+  margin-bottom: 1.5em;
 }
 
 #submit_new_topic, #save_source_button {

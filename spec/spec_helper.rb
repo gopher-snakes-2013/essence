@@ -59,7 +59,7 @@ end
 
 module SourceHelper
   def create_sample_source
-    sample_pdf = User.find(1).sources.new
+    sample_pdf = User.last.sources.new
     sample_pdf.url = "https://www.irs.gov/pub/irs-pdf/f990ez.pdf"
     sample_pdf.title = "Sample"
     sample_pdf.save
