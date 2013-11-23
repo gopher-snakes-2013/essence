@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 a:hover, a:focus, a:active,
 input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active,
 button:hover, button:focus, button:active {
@@ -11,6 +14,7 @@ button:hover, button:focus, button:active {
 }
 
 #essence_logo {
+  font-family: 'Helvetica Neue' !important;
   position: absolute;
   left: 16px;
   top: 6.4px;
@@ -57,6 +61,8 @@ button:hover, button:focus, button:active {
   float: right;
   list-style: none;
   margin-top: 14px;
+  font-family: 'Helvetica Neue' !important;
+
 }
 
 .navbar ul li {
@@ -64,11 +70,13 @@ button:hover, button:focus, button:active {
   margin-right: 1.5em;
 }
 
+
 .navbar ul li a {
   color: #8d9aa5;
   text-decoration: none;
 }
 
+.navbar ul li:hover, .navbar ul li:focus, .navbar ul li:active,
 .navbar ul li a:hover, .navbar ul li a:focus, .navbar ul li a:active {
   color: #fff;
   text-decoration: none;
@@ -165,10 +173,11 @@ button:hover, button:focus, button:active {
 }
 
 @media screen and (max-width: 660px) {
+  #pageNumberLabel, #pageNumber {
+    display: none;
+  }
 
-
-#pageNumberLabel, #pageNumber {
-  display: none;
-}
-
+  #user-profile {
+    display: none;
+  }
 }
