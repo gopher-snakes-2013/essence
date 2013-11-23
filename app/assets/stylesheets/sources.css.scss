@@ -1,13 +1,8 @@
-.addSourceUrl {
-  width: 80%;
-  margin-left: 10%;
-}
-
 .list_of_sources {
-  width: 80%;
-  margin: 0 auto;
   text-align: center;
   list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
 
   li {
     width: 33%;
@@ -26,46 +21,30 @@
     a {
       color: #384047;
       overflow: auto;
-      width: 50%;
       text-align: left;
       margin-bottom: 2em;
       text-decoration: none;
+      text-align: center;
 
       &:hover {
         text-decoration: none;
       }
     }
+
+    .source_title {
+      font-size: 0.75em;
+    }
   }
 }
 
-.add_pdf {
-  margin-top: 2em;
-}
-
-.show_pdf_library #your_library {
-  margin-top: 5em;
-}
-
-#bookmarklet-description {
-  float: left;
-  width: 60%;
-  text-align: right;
-}
-
 #bookmarklet {
-  float: left;
-  margin-left: 1em;
   padding: 0.4em 0.6em;
   font-size: 0.7em;
   font-weight: 300;
   color: #fff;
   text-align: center;
   background: #2ecc71;
-  border: 0;
   border-radius: 3px;
-  border-color: rgba(0,0,0,0.7);
-  border: 1px solid transparent;
-  border-width: 1px 1px 1px;
   cursor: pointer;
   border-color: #3dc264;
   border-bottom: 1px solid #c4c4c4;
@@ -77,15 +56,11 @@
   text-decoration: none;
 }
 
-.list_of_sources li {
-  position: relative;
-}
-
 .list_of_sources .delete-button {
   display: none;
   position: absolute;
-  top: -6px;
-  left: 139px;
+  margin-left: 1.8em;
+  margin-top: -9.5em;
   color: #c0392b;
   font-size: 0.7em;
   font-weight: 200;
@@ -94,4 +69,18 @@
   background-color: transparent;
 }
 
+@media screen and (max-width: 800px) {
+  .list_of_sources {
+    display: block;
 
+    li {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .list_of_sources li {
+    width: 100%;
+    display: block;
+  }
+}

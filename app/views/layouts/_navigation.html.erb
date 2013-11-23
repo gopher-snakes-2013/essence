@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <% if signed_in? -%>
-        <li><%= link_to current_user.email, root_path %></li>
+        <li id="user-profile"><%= link_to current_user.email, root_path %></li>
         <li><%= link_to 'Snippets', root_path %></li>
         <li><%= link_to 'Library', sources_path %></li>
         <li><%= link_to t('.sign_out'), sign_out_path, :method => :delete, id: "sign_out" %></li>

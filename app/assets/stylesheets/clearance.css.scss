@@ -13,16 +13,6 @@ body {
   border-bottom: 1px solid #c4c4c4;
   border-radius: 5px;
 }
-.sign-up:before, .sign-up:after {
-  content: '';
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  right: 0;
-  height: 0.625em;
-  background: inherit;
-  border-radius: 4px;
-}
 
 .sign-up-title {
   margin: -0.82em -0.97em 1em;
@@ -47,7 +37,6 @@ body {
   background-image: -moz-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: -o-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: linear-gradient(to right, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
-
 }
 
 input {
@@ -56,7 +45,7 @@ input {
   box-sizing: border-box;
 }
 
-.sign-up-input {
+.sign-up-input, #password_email, .submit-field input[type="submit"] {
   width: 100%;
   height: 50px;
   margin-bottom: 25px;
@@ -66,7 +55,7 @@ input {
   border: 2px solid #ebebeb;
   border-radius: 4px;
 }
-.sign-up-input:focus {
+.sign-up-input:focus, #password_email:focus {
   border-color: #2ecc71;
   outline: none;
 }
@@ -143,7 +132,58 @@ input {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-
 }
 
+.sign-up input[type="submit"]:hover, .sign-up input[type="submit"]:focus,
+.submit-field input[type="submit"]:hover, .submit-field input[type="submit"]:focus,
+.submit-field input[type="submit"]:active {
+  background-color: #40d47e;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
+// Forgot Password
+
+.password-reset p {
+  text-align: center;
+}
+
+#password_email {
+  width: 15em;
+  display: block;
+  margin: 0 auto;
+}
+
+ .submit-field input[type="submit"] {
+  font-size: 17px;
+  width: 15em;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  background: #F9845B;
+ }
+
+.submit-field input[type="submit"]:hover, .submit-field input[type="submit"]:focus,
+.submit-field input[type="submit"]:active {
+  background: #ed8d65;
+ }
+
+@media screen and (max-width: 768px) {
+  .sign-up {
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  .sign-up-title {
+    padding-top: 0.5em;
+  }
+
+  .sign-up-title:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  }
+
+}
