@@ -76,3 +76,22 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   text-decoration: none;
 }
+
+.list_of_sources li {
+  position: relative;
+}
+
+.list_of_sources .delete-button {
+  display: none;
+  position: absolute;
+  top: -6px;
+  left: 139px;
+  color: #c0392b;
+  font-size: 0.7em;
+  font-weight: 200;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+}
+
+
