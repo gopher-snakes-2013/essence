@@ -13,16 +13,6 @@ body {
   border-bottom: 1px solid #c4c4c4;
   border-radius: 5px;
 }
-.sign-up:before, .sign-up:after {
-  content: '';
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  right: 0;
-  height: 0.625em;
-  background: inherit;
-  border-radius: 4px;
-}
 
 .sign-up-title {
   margin: -0.82em -0.97em 1em;
@@ -47,7 +37,6 @@ body {
   background-image: -moz-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: -o-linear-gradient(left, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
   background-image: linear-gradient(to right, #2ecc71, #2ecc71 25%, #fecf71 25%, #fecf71 50%, #f0776c 50%, #f0776c 50%, #f0776c 75%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 100%, #62c2e4 100%, #62c2e4);
-
 }
 
 input {
@@ -146,4 +135,23 @@ input {
 
 }
 
+@media screen and (max-width: 768px) {
+  .sign-up {
+    margin-top: 1em;
+    width: 100%;
+  }
 
+  .sign-up-title {
+    padding-top: 0.5em;
+  }
+
+  .sign-up-title:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  }
+
+}

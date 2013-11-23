@@ -4,17 +4,21 @@
   margin-bottom: 1em;
 }
 
-.new-topic-form {
+.new-topic-form, .add_pdf {
   width: 100%;
   margin: 0 auto;
 }
 
-#new_topic {
+#new_topic, .addSourceUrl {
   display: block;
   text-align: center;
 }
 
-#topic_name {
+.addSourceUrl {
+  margin-top: 2em;
+}
+
+#topic_name, #source_title, #source_url {
   margin: 0 auto;
   height: 2.55em;
   font-size: 1em;
@@ -128,20 +132,6 @@
   margin-top: 3em;
 }
 
-#source_title, #source_url {
-  width: 40%;
-  height: 2.55em;
-  font-size: 1em;
-  background: #fff;
-  border-radius: 3px;
-  border-color: rgba(0,0,0,0.7);
-  border: 1px solid transparent;
-  cursor: text;
-  text-indent: 1em;
-  border-bottom: 1px solid #c4c4c4;
-}
-
-
 // snippets
 
 .snippet {
@@ -200,15 +190,16 @@
 }
 
 @media screen and (max-width: 768px) {
-  #topic_name {
+  #topic_name, #source_title, #source_url {
     display: block;
     margin-bottom: 0.3em;
+    width: 95%;
   }
 
   #submit_new_topic, #save_source_button {
    display: block;
    margin: 0 auto;
-   width: 17em;
+   width: 95%;
    font-size: 0.9em;
   }
 
