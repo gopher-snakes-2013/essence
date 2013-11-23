@@ -14,7 +14,7 @@ var SourcesHandler = {
   },
 
   displaySourcesErrors: function(response) {
-    $(".library_errors").html(response.responseJSON.errors[0])
+    $(".library_errors").show().html(response.responseJSON.errors[0])
   }
 }
 
