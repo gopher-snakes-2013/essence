@@ -26,6 +26,12 @@ class SourcesController < ApplicationController
     end
   end
 
+  def destroy
+    @source = Source.find(params[:id])
+    @source.destroy
+    render :nothing => true
+  end
+
   def open_pdf
     source = current_user.sources.where(url: params[:url]).first
     unless source

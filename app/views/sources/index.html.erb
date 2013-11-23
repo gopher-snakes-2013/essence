@@ -15,9 +15,10 @@
 
   <ul class="list_of_sources">
     <% @sources.each do |source| %>
-    <li>
+    <li class="source">
       <%= link_to image_tag("placeholder-cover.png"), source_path(source) %>
       <%= link_to source.title, source %>
+      <%= button_to '✖', source_path(source), {action: :destroy, :class => 'delete-button', method: 'delete', remote: true } %>
     </li>
     <% end %>
   </ul>

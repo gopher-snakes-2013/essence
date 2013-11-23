@@ -15,5 +15,10 @@ feature 'Sources library:' do
       click_on('Sample')
       expect(current_path).to eq('/sources/1')
     end
+
+    it "can click on an 'x' to delete a source", js: true do
+      click_on('Library')
+      find('.delete-button').click
+    end
   end
 end
