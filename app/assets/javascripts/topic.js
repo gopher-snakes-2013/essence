@@ -24,12 +24,12 @@ var TopicHandler = {
   },
 
   clearErrorsDiv: function(){
-    $("#new-topic-errors").html("").fadeOut(225);
+    $("#new-topic-errors").html("").fadeOut(175);
   },
 
   removeTopicOnDelete: function(){
     $(".topic-list").on('ajax:success', '.topic-name .button_to', function(e, snippets){
-      $(this).closest('.topic-name').hide(225, function(){this.remove()});
+      $(this).closest('.topic-name').fadeOut(175, function(){this.remove()});
       TopicHandler.appendUnaffiliatedSnippets(snippets);
     })
   },
@@ -39,7 +39,7 @@ var TopicHandler = {
   },
 
   affiliateSnippet: function(event, ui){
-    ui.draggable.hide(200)
+    ui.draggable.fadeOut(175)
     ui.draggable.remove
     var snippet_id = ui.draggable.attr('data-id');
     var topic_id = $(this).attr('data-id')

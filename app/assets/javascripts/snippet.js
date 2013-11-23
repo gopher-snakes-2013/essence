@@ -1,13 +1,13 @@
 var SnippetHandler = {
   removeSnippetOnDelete: function(){
     $(".snippets_list").on("ajax:success", '.snippet .button_to', function(){
-      $(this).closest('.snippet').hide(225, function(){$(this).remove()});
+      $(this).closest('.snippet').fadeOut(175, function(){$(this).remove()});
     })
   },
 
   removeUnaffiliatedSnippetOnDelete: function(){
-    $(".topic-list").on('ajax:success', '.snippet .button_to', function(){
-      $(this).closest('.snippet').hide(225, function(){this.remove()});
+    $(".unaffiliated").on('ajax:success', '.snippet .button_to', function(){
+      $(this).closest('.snippet').fadeOut(175, function(){this.remove()});
     })
   },
 }
