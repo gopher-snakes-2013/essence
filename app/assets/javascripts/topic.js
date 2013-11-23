@@ -9,7 +9,7 @@ var TopicHandler = {
   },
 
   displayErrors: function(e, response){
-    $("#new-topic-errors").hide().html(response.responseJSON.errors[0]).fadeIn(225);
+    $("#new-topic-errors").show().html(response.responseJSON.errors[0]).fadeIn(225);
   },
 
   prependTopic: function(e, response){

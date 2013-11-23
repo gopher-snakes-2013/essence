@@ -116,3 +116,16 @@ button:hover, button:focus, button:active {
   margin-top: 1.5em;
   text-align: center;
 }
+
+#new-topic-errors, .library_errors {
+  display: none;
+  width: 100%;
+  background: #FF5555;
+  color: white;
+  position: absolute;
+  top: 54px;
+  padding: 3px;
+  font-size: 0.8em;
+  text-indent: 10px;
+  z-index: 1000;
+}
