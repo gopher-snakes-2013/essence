@@ -129,3 +129,9 @@ button:hover, button:focus, button:active {
   text-indent: 10px;
   z-index: 1000;
 }
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    float: left;
+  }
+}
