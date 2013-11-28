@@ -61,6 +61,7 @@
 // Topic
 
 .topic-name {
+  position: relative;
   margin: 3em auto;
   width: 65%;
   padding: 2em 1.74em;
@@ -112,7 +113,9 @@
   }
 
   .delete-button {
-    float: right;
+    position: absolute;
+    top: 3px;
+    right: 5px;
     font-size: 0.7em;
     font-weight: 200;
     color: #f0776c;
