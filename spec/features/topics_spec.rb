@@ -79,6 +79,7 @@ feature 'User deletes a topic', js: true do
   before(:each) do
     sign_in_as(user)
     find('.delete-button').click
+    page.driver.browser.switch_to.alert.accept
   end
 
   scenario "can click on a button to delete a topic" do
