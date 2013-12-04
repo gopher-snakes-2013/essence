@@ -1,7 +1,7 @@
 require 'spec_helper'
 include UserHelper
 
-feature 'Snippets' do
+feature 'Snippets', js:true do
 
   let!(:user) { FactoryGirl.create(:user_with_topics_with_snippets) }
 
@@ -23,6 +23,7 @@ feature 'Snippets' do
     scenario 'snippet should be removed from the page', js: true do
       first_snippet = user.snippets.first.content
       find('.topic-list .delete-button').click # Deletes topic so it leaves an unaffiliated snippet
+      page.driver.browser.switch_to.alert.accept
       find('.unaffiliated .delete-button').click # Deletes the unaffiliated snippet
       page.should_not have_content(first_snippet)
     end
