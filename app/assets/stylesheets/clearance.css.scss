@@ -71,13 +71,13 @@ input {
   height: 54px;
   padding: 0;
   margin-bottom: 1em;
+  cursor: pointer;
   font-size: 22px;
   color: #fff;
   text-align: center;
   background: #2ecc71;
   border: 0;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .sign-up input[type="submit"]:hover, .sign-up input[type="submit"]:focus {
