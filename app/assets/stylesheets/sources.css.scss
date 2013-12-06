@@ -47,7 +47,7 @@
   border-radius: 3px;
   cursor: pointer;
   border-color: #3dc264;
-  border-bottom: 1px solid #c4c4c4;
+  border: 1px solid #3dc264;
 }
 
 #bookmarklet:hover, #bookmarklet:focus {
@@ -60,7 +60,7 @@
   display: none;
   position: absolute;
   margin-left: 1.8em;
-  margin-top: -9.5em;
+  margin-top: -9em;
   color: #c0392b;
   font-size: 0.7em;
   font-weight: 200;

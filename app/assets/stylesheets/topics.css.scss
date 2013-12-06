@@ -32,21 +32,17 @@
 }
 
 #submit_new_topic, #save_source_button {
-  padding: 0.5em 0.6em;
+  padding: 0.47em 0.9em 0.50em 0.7em;
   font-size: 1em;
   font-weight: 300;
   color: #fff;
   text-align: center;
   background: #669ae1;
   border: 0;
+  cursor: pointer;
   border-radius: 3px;
-  border-color: rgba(0,0,0,0.7);
-  border: 1px solid transparent;
-  cursor: pointer;
-  border-color: rgba(0,0,0,0.7);
-  border: 1px solid transparent;
-  cursor: pointer;
-  border-bottom: 1px solid #c4c4c4;
+  border: 1px solid #669ae1;
+
 }
 
 #submit_new_topic:hover, #submit_new_topic:focus,
