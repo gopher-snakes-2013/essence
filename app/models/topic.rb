@@ -1,8 +1,8 @@
 class Topic < ActiveRecord::Base
   belongs_to :user
   has_many :snippets
-  validates_presence_of :name, :user_id
-  validates_uniqueness_of :name, scope: :user_id
+  validates :name, :user_id, presence: true
+  validates :name, uniqueness: { scope: :user_id }
   before_destroy :preserve_snippets
 
   private
