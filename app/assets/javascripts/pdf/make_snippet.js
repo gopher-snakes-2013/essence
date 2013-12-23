@@ -6,31 +6,44 @@ String.prototype.replaceLineBreakWithSpace = function() {
   return this.replace(/\r?\n/g," ");
 }
 
+String.prototype.replaceDoubleSpaceWithSingle = function() {
+  return this.replace(/(  )/g, " ");
+}
+
 var SnippetHandler = {
   init: function(){
-    var snippet = SnippetHandler.captureSnippet()
-    if(!snippet.length){
+    // This will grab all the divs that were selected
+    var snippet = SnippetHandler.captureSelection();
+
+    // Check if there were any divs/text selected
+    if(!snippet.children.length){
       console.log("Please select some text!")
     } else {
-      if (snippet.length > 254){
+      // Size limit on snippet
+      if (snippet.textContent.length > 254){
         alert("Sorry, your selection was too long! The limit is 255 characters. <3 Essence")
       } else {
-      snippet = SnippetHandler.formatText(snippet)
+      snippet = SnippetHandler.formatTextFromDivs(snippet.children)
       SnippetHandler.showAndFillNewSnippetForm(snippet)
       }
     }
   },
 
-  captureSnippet: function(e){
+  captureSelection: function(e){
     if(window.getSelection().type === "None"){
       return 0;
     } else {
-      return window.getSelection().getRangeAt(0).cloneContents().textContent.trim()
+      return window.getSelection().getRangeAt(0).cloneContents();
     }
   },
 
-  formatText: function(string){
-    return string.removeDashWithLineBreak().replaceLineBreakWithSpace();
+  formatTextFromDivs: function(snippetDivs){
+    // Goes through each div and grabs the text and adds it to a string
+    var snipString;
+    for(var i=0;i<snippetDivs.length;i++){
+      snipString += " " + snippetDivs[i].textContent;
+    }
+    return snipString.removeDashWithLineBreak().replaceLineBreakWithSpace().replaceDoubleSpaceWithSingle();
   },
 
   showAndFillNewSnippetForm: function(snippet){
