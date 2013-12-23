@@ -39,11 +39,11 @@ var SnippetHandler = {
 
   formatTextFromDivs: function(snippetDivs){
     // Goes through each div and grabs the text and adds it to a string
-    var snipString;
+    var snipString = "";
     for(var i=0;i<snippetDivs.length;i++){
       snipString += " " + snippetDivs[i].textContent;
     }
-    return snipString.removeDashWithLineBreak().replaceLineBreakWithSpace().replaceDoubleSpaceWithSingle();
+    return snipString.trim().removeDashWithLineBreak().replaceLineBreakWithSpace().replaceDoubleSpaceWithSingle();
   },
 
   showAndFillNewSnippetForm: function(snippet){
