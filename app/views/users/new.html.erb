@@ -1,3 +1,6 @@
+<div class='welcome'>
+  Welcome to Essence!
+</div>
 <div class='sign-up'>
   <h1 class="sign-up-title">Sign up</h1>
 
@@ -5,5 +8,5 @@
     <%= render :partial => '/users/form', :object => form %>
   <% end %>
 
-  <%= link_to "Sign in", sign_in_path, class: "sign_in_link" %>
+  <%= link_to "Already have an account? Sign in", sign_in_path, class: "sign_in_link" %>
 </div>
