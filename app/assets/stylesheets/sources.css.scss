@@ -32,6 +32,8 @@
     }
 
     .source_title {
+      display: block;
+      overflow-wrap: break-word;
       font-size: 0.75em;
     }
   }
