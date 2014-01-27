@@ -1,7 +1,10 @@
+<p class='instructions'>
+  Click on the 'Library' tab to add a PDF to your library of sources
+</p>
 <h1 id="new_topic_header">Topics</h1>
-<div class="instructions">
+<p class="instructions">
   Organize your snippets with topics
-</div>
+</p>
 <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 <div class="topic-list">
 
@@ -11,9 +14,9 @@
 
   <div class="unaffiliated">
     <h1>Unassigned Snippets:</h1>
-    <div class="instructions">
+    <p class="instructions">
       Assign snippets to a topic by dragging them to a topic
-    </div>
+    </p>
     <%= render 'snippets', snippets: @unaffiliated %>
   </div>
 
