@@ -3,6 +3,6 @@
     <%= form.password_field :password, placeholder: 'password', class: "sign-up-input" %>
     <%= form.submit %>
 
-    <%= link_to t('.sign_up'), sign_up_path, class: "sign_in_link"  %>
+    <%= link_to "Don't have an account? Sign Up!", sign_up_path, class: "sign_in_link"  %>
     <%= link_to t('.forgot_password'), new_password_path, class: "sign_in_link"  %>
 <% end %>

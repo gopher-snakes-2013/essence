@@ -11,14 +11,14 @@ feature 'Guest signing up', js: true do
   end
 
   scenario 'A guest should be able to visit a sign up form from the home page', js: true do
-    click_on 'Sign up'
+    click_on "Don't have an account? Sign Up!"
     expect(current_path).to eq sign_up_path
   end
 
   scenario 'A user can sign up', js: true do
     user = FactoryGirl.build(:user)
 
-    click_on 'Sign up'
+    click_on "Don't have an account? Sign Up!"
     fill_in 'email', with: user.email
     fill_in 'password', with: user.password
     click_on 'Sign up'
