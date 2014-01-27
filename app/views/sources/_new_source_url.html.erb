@@ -1,5 +1,5 @@
 <li class="source">
-  <%= image_tag("placeholder-cover.png", alt: "placeholder PDF cover") %>
-  <%= link_to source.title, source %>
+  <%= link_to image_tag("placeholder-cover.png", alt: "placeholder PDF cover"), source_path(source) %>
   <%= button_to '✖', source_path(source), {action: :destroy, :class => 'delete-button', method: 'delete', remote: true, data: { confirm: "Are you sure?" } } %>
+  <%= link_to source.title, source, class: "source_title" %>
 </li>
