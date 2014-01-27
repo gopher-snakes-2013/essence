@@ -1,7 +1,17 @@
+// Instructions
+
+.instructions {
+  margin-bottom: 1em;
+  text-align: center;
+  color: #669ae1;
+  font-weight: 500;
+}
+
 // Add new topic
 
 #new_topic_header {
-  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
 }
 
 .new-topic-form, .add_pdf {
@@ -125,7 +135,8 @@
 }
 
 .unaffiliated h1 {
-  margin-top: 3em;
+  margin-top: 2.75em;
+  margin-bottom: 0.1em;
 }
 
 // snippets

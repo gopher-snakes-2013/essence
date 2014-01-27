@@ -1,13 +1,19 @@
 <h1 id="new_topic_header">Topics</h1>
+<div class="instructions">
+  Organize your snippets with topics
+</div>
 <div class="new-topic-form"> <%= render "new_topic_form" %> </div>
 <div class="topic-list">
 
   <% @topics.all.each do |topic|%>
-    <%= render 'topic', topic: topic %>
+  <%= render 'topic', topic: topic %>
   <% end %>
 
   <div class="unaffiliated">
     <h1>Unassigned Snippets:</h1>
+    <div class="instructions">
+      Assign snippets to a topic by dragging them to a topic
+    </div>
     <%= render 'snippets', snippets: @unaffiliated %>
   </div>
 
