@@ -20,7 +20,7 @@ var SourcesHandler = {
   },
 
   appendNewSource: function(response) {
-    $(".show_pdf_library ul").append(response.responseJSON)
+    $(response.responseJSON).appendTo(".show_pdf_library ul")
     $(".add_pdf form #source_title").val("")
     $(".add_pdf form #source_url").val("")
   },
