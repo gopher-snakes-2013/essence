@@ -1,5 +1,6 @@
 .list_of_sources {
   text-align: center;
+  display: inline-block;
   list-style: none;
   margin-left: 0px;
   padding-left: 0px;
@@ -7,6 +8,8 @@
   li {
     width: 33%;
     float: left;
+    height: 170px;
+    margin-top: 10px;
     margin-bottom: 2.5em;
     text-align: center;
 
